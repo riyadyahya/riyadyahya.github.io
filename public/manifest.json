@@ -1,0 +1,27 @@
+{
+  "name": "Riyad Yahya Portfolio",
+  "short_name": "Riyad Yahya",
+  "description": "Senior Software Engineer specializing in React.js, Node.js, and MongoDB. Building scalable & secure systems with over 7 years of experience in SaaS companies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/ico",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["portfolio", "personal website"],
+  "dir": "ltr",
+  "lang": "en-US",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope": "/",
+  "screenshots": [],
+  "shortcuts": [],
+  "iarc_rating_id": ""
+} 

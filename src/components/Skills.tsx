@@ -5,9 +5,9 @@ const Skills = () => {
       skills: [
         { name: "React.js", level: "Expert" },
         { name: "TypeScript", level: "Expert" },
-        { name: "Redux/MobX", level: "Expert" },
-        { name: "HTML/CSS", level: "Expert" },
-        { name: "Tailwind CSS", level: "Advanced" }
+        { name: "Redux", level: "Expert" },
+        { name: "Next.js", level: "Advanced" },
+        { name: "Tailwind CSS", level: "Expert" }
       ]
     },
     {
@@ -17,27 +17,30 @@ const Skills = () => {
         { name: "NestJS", level: "Expert" },
         { name: "MongoDB", level: "Expert" },
         { name: "Microservices", level: "Expert" },
-        { name: "RESTful APIs", level: "Expert" }
+        { name: "RESTful APIs", level: "Expert" },
+        { name: "Express.js", level: "Expert" }
       ]
     },
     {
       category: "DevOps & Cloud",
       skills: [
-        { name: "AWS (EKS, EC2, S3, CloudFront)", level: "Expert" },
-        { name: "Terraform", level: "Advanced" },
-        { name: "Jenkins", level: "Advanced" },
+        { name: "AWS (ECS, EC2, S3, CloudFront)", level: "Expert" },
+        { name: "Docker", level: "Expert" },
         { name: "CI/CD", level: "Expert" },
-        { name: "Docker", level: "Advanced" }
+        { name: "Jenkins", level: "Advanced" },
+        { name: "Terraform", level: "Advanced" },
+        { name: "Kubernetes", level: "Advanced" }
       ]
     },
     {
-      category: "Leadership & Management",
+      category: "Leadership & Product",
       skills: [
         { name: "Team Leadership", level: "Expert" },
-        { name: "Agile/Scrum", level: "Expert" },
-        { name: "Project Management", level: "Expert" },
         { name: "Technical Strategy", level: "Expert" },
-        { name: "Mentoring", level: "Expert" }
+        { name: "Product Development", level: "Expert" },
+        { name: "Agile/Scrum", level: "Expert" },
+        { name: "System Architecture", level: "Expert" },
+        { name: "Technical Mentoring", level: "Expert" }
       ]
     }
   ];

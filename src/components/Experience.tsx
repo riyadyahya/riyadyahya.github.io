@@ -2,18 +2,18 @@ const Experience = () => {
   const experiences = [
     {
       company: "Coretava",
-      role: "Software Engineering Manager",
+      role: "Software Engineering Manager (CTO)",
       period: "March 2020 - Present",
       duration: "5 years 4 months",
-      location: "Palestine",
-      description: "Coretava – User Engagement & Retention Platform",
+      location: "United States",
+      description: "Coretava – Comprehensive Loyalty & Retention Platform",
       achievements: [
-        "Led DevOps strategy and cloud infrastructure management, implementing AWS EKS, EC2, S3, and CloudFront for scalable deployments",
-        "Architected and scaled backend infrastructure using NestJS, TypeScript, and MongoDB, supporting 100+ million monthly active users",
-        "Built and managed high-performing engineering teams, mentoring engineers and fostering innovation",
-        "Spearheaded Agile and DevOps transformation, optimizing development workflows and accelerating product releases",
-        "Led integrations with major e-commerce platforms, expanding the company's ecosystem",
-        "Implemented system monitoring, security best practices, and disaster recovery strategies"
+        "Led and managed a team of 6-10 engineers, restructuring the team into specialized frontend and backend units for improved expertise and collaboration",
+        "Spearheaded technical debt cleanup, migrating codebase from JavaScript to TypeScript and implementing NestJS for improved modularity and scalability",
+        "Launched CoreLoyalty platform with enhanced point system, cashback mode, and extended feature flexibility",
+        "Expanded integration ecosystem to support VTEX, Tray, Nuvemshop, WooCommerce, Magento, PrestaShop, and Wake",
+        "Developed powerful public APIs and strategic POS integrations through key partnerships",
+        "Transformed Coretava into a comprehensive loyalty platform with strong technical foundation and diverse integration network"
       ]
     },
     {
@@ -21,14 +21,14 @@ const Experience = () => {
       role: "Senior Software Engineer",
       period: "October 2018 - March 2020",
       duration: "1 year 6 months",
-      location: "Palestine",
-      description: "Coretava – User Engagement & Retention Platform",
+      location: "United States",
+      description: "Coretava – E-commerce Loyalty Platform",
       achievements: [
-        "Designed and implemented scalable backend infrastructure using microservices architecture",
-        "Automated cloud infrastructure and deployment using Terraform and Jenkins",
-        "Developed the Coretava loyalty app and front-end dashboard using React, TypeScript, and MobX",
-        "Led integrations with major e-commerce platforms including Shopify, PrestaShop, and others",
-        "Optimized system scalability and performance through cloud architecture and API design"
+        "Expanded platform with seamless Shopify integration through custom-built apps",
+        "Developed SDKs for Android and iOS to complement existing web SDK",
+        "Launched TeamUp product for team-based loyalty with mobile app for employee challenges and rewards",
+        "Built backend using Node.js/Express and MongoDB, frontend with React/Redux",
+        "Managed infrastructure and deployment using AWS Cloud (ECS, EC2, S3, CloudFront)"
       ]
     },
     {
@@ -36,14 +36,15 @@ const Experience = () => {
       role: "Software Engineer",
       period: "January 2018 - October 2018",
       duration: "10 months",
-      location: "Palestine",
-      description: "Coretava – User Engagement & Retention Platform",
+      location: "United States",
+      description: "Gamiphy / Coretava – E-commerce Loyalty Platform",
       achievements: [
-        "Designed and developed backend services using Node.js, TypeScript, and MongoDB",
-        "Managed DevOps infrastructure on AWS EKS and EC2",
-        "Developed feature-rich loyalty app with missions, games, and referral systems",
-        "Built responsive Coretava dashboard for campaign and customer data management",
-        "Implemented gamification tools to boost customer interaction and retention"
+        "Led full-stack development for Gamibot MVP, an e-commerce loyalty solution",
+        "Developed Gamibot dashboard using React and Redux, built widget and JavaScript SDK",
+        "Designed and implemented microservices architecture using Node.js and Express",
+        "Managed AWS infrastructure including ECS deployment and EC2 load balancers",
+        "Built core services for user/tenant management, points system, and interactive loyalty features",
+        "Successfully onboarded early customers, validating product value and scalability"
       ]
     },
     {
@@ -51,13 +52,14 @@ const Experience = () => {
       role: "Software Engineer",
       period: "June 2016 - October 2018",
       duration: "2 years 5 months",
-      location: "Palestine",
+      location: "United States",
       description: "Freightos – Online Marketplace for Global Shipping",
       achievements: [
-        "Developed and enhanced the Freightos Marketplace using React and Redux",
-        "Implemented Test-Driven Development (TDD), reducing regression bugs by 80%",
-        "Designed and implemented CI/CD pipeline using Jenkins",
-        "Contributed to automating freight sales for global freight companies"
+        "Led frontend implementation of marketplace platform serving 100K+ monthly active users using React.js and Redux",
+        "Implemented domain-driven folder structure and integrated company's internal UI kit",
+        "Owned testing and release pipeline with Jest for unit and snapshot tests",
+        "Set up CI/CD workflow combining unit, snapshot, and end-to-end tests",
+        "Implemented deployment practices using LaunchDarkly for feature flagging and Segment for event tracking"
       ]
     }
   ];

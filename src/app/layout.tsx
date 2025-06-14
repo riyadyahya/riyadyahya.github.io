@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import favicon from '../assets/favicon.png';
-import profile from '../assets/profile.jpeg';
+import profile from '../assets/profile.jpg';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import "./globals.css";
 
@@ -32,9 +31,9 @@ export const metadata: Metadata = {
     "Cloud Architecture",
     "Microservices"
   ],
-  authors: [{ 
-    name: "Riyad Yahya", 
-    url: "https://www.linkedin.com/in/riyad-yahya" 
+  authors: [{
+    name: "Riyad Yahya",
+    url: "https://www.linkedin.com/in/riyad-yahya"
   }],
   creator: "Riyad Yahya",
   publisher: "Riyad Yahya",
@@ -46,30 +45,34 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#2563eb' },
-    { media: '(prefers-color-scheme: dark)', color: '#1e40af' }
-  ],
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: "Riyad Yahya Portfolio",
   },
   icons: {
-    icon: favicon.src,
-    shortcut: favicon.src,
-    apple: favicon.src,
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/ico' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/ico' },
+    ],
     other: [
       {
         rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
+        url: '/favicon.ico',
         color: '#2563eb'
+      },
+      {
+        rel: 'icon',
+        type: 'image/ico',
+        sizes: '32x32',
+        url: '/favicon.ico'
+      },
+      {
+        rel: 'manifest',
+        url: '/site.webmanifest'
       }
     ]
   },

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import profile from '../assets/profile.jpeg';
+import profile from '../assets/profile.jpg';
 import AppointmentButton from './AppointmentButton';
 
 const Navbar = () => {
@@ -32,6 +32,9 @@ const Navbar = () => {
             </div>
             <Link href="/" className="text-xl font-bold">
               Riyad Yahya
+              <span className="text-sm font-normal text-gray-600 dark:text-gray-400 block">
+                Senior Software Engineer & Engineering Leader
+              </span>
             </Link>
           </div>
 
