@@ -39,8 +39,8 @@ A modern, responsive portfolio website built with Next.js and Tailwind CSS, show
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/riyadyahya/portfolio.git
-cd portfolio
+git clone https://github.com/riyadyahya/riyadyahya.github.io.git
+cd riyadyahya.github.io
 ```
 
 2. Install dependencies:
@@ -86,7 +86,7 @@ This portfolio is automatically deployed to GitHub Pages using GitHub Actions. T
    - Build the Next.js application
    - Generate static files
    - Deploy to GitHub Pages
-3. Your site will be available at `https://riyadyahya.github.io/portfolio`
+3. Your site will be available at `https://riyadyahya.github.io`
 
 ### Manual Deployment
 If needed, you can manually trigger the deployment:
@@ -106,4 +106,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - GitHub: [@riyadyahya](https://github.com/riyadyahya)
 - LinkedIn: [Riyad Yahya](https://linkedin.com/in/riyadyahya)
-- Portfolio: [riyadyahya.github.io/portfolio](https://riyadyahya.github.io/portfolio)
+- Portfolio: [riyadyahya.github.io](https://riyadyahya.github.io)
