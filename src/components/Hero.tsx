@@ -1,32 +1,31 @@
 import Image from 'next/image';
 import profile from '../assets/profile.jpg';
+import { PERSONAL_INFO } from '@/constants';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
           <div className="mb-8 flex justify-center">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-lg">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-600 shadow-lg">
               <Image
                 src={profile}
-                alt="Riyad Yahya"
+                alt={PERSONAL_INFO.name}
                 fill
                 className="object-cover"
                 priority
               />
             </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Riyad Yahya</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            Hi, I&apos;m <span className="text-blue-600">{PERSONAL_INFO.name}</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto">
-            Senior Software Engineer & Engineering Leader | React.js | Node.js | MongoDB | Scalable & Secure Systems
+          <p className="text-xl sm:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto">
+            {PERSONAL_INFO.title}
           </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-            Over 7 years of experience building scalable SaaS products, specializing in loyalty and e-commerce. 
-            Expert in MERN stack, TypeScript, scalable architectures, and DevOps practices. 
-            Led engineering teams of 6-10 members, driving technical upgrades and strategic product development.
+          <p className="text-lg text-gray-600 mb-8 max-w-5xl mx-auto">
+            {PERSONAL_INFO.summary}
           </p>
           <div className="flex justify-center space-x-4">
             <a
@@ -37,7 +36,7 @@ const Hero = () => {
             </a>
             <a
               href="#experience"
-              className="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-8 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+              className="bg-gray-200 text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-300 transition-colors"
             >
               View Experience
             </a>

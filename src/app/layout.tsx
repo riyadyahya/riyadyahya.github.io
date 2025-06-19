@@ -1,36 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import './globals.css';
 import { Inter } from "next/font/google";
 import profile from '../assets/profile.jpg';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
-import "./globals.css";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import {PERSONAL_INFO, TOP_SKILLS} from "@/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://riyadyahya.github.io'),
-  title: {
-    default: "Riyad Yahya - Senior Software Engineer",
-    template: "%s | Riyad Yahya"
-  },
-  description: "Senior Software Engineer specializing in React.js, Node.js, and MongoDB. Building scalable & secure systems with over 7 years of experience in SaaS companies.",
-  applicationName: "Riyad Yahya Portfolio",
-  keywords: [
-    "Riyad Yahya",
-    "Senior Software Engineer",
-    "React.js",
-    "Node.js",
-    "MongoDB",
-    "DevOps",
-    "AWS",
-    "TypeScript",
-    "Full Stack Developer",
-    "Palestine",
-    "Tech Lead",
-    "Team Leadership",
-    "MERN Stack",
-    "Cloud Architecture",
-    "Microservices"
-  ],
+  title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
+  description: PERSONAL_INFO.summary,
+  keywords: TOP_SKILLS,
   authors: [{
     name: "Riyad Yahya",
     url: "https://www.linkedin.com/in/riyad-yahya"
@@ -77,12 +58,10 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://riyadyahya.github.io",
-    title: "Riyad Yahya - Senior Software Engineer",
-    description: "Senior Software Engineer specializing in React.js, Node.js, and MongoDB. Building scalable & secure systems with over 7 years of experience in SaaS companies.",
-    siteName: "Riyad Yahya Portfolio",
+    title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
+    description: PERSONAL_INFO.summary,
+    type: 'website',
+    url: 'https://riyadyahya.github.io',
     images: [
       {
         url: profile.src,
@@ -90,13 +69,12 @@ export const metadata: Metadata = {
         height: profile.height,
         alt: "Riyad Yahya - Senior Software Engineer"
       }
-    ],
+    ]
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Riyad Yahya - Senior Software Engineer",
-    description: "Senior Software Engineer specializing in React.js, Node.js, and MongoDB. Building scalable & secure systems with over 7 years of experience in SaaS companies.",
-    creator: "@riyadyahya",
+    card: 'summary_large_image',
+    title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
+    description: PERSONAL_INFO.summary,
     images: [profile.src],
   },
   robots: {
@@ -134,18 +112,20 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <meta name="theme-color" content="#2563eb" />
-        <meta name="color-scheme" content="light dark" />
-        <link rel="manifest" href="/manifest.json" />
-      </head>
-      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
-        <GoogleAnalytics />
-        <main className="min-h-screen">
+    <head>
+      <title>{`${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`}</title>
+      <link rel="shortcut icon" href="/favicon.ico"/>
+      <meta name="theme-color" content="#2563eb"/>
+      <meta name="color-scheme" content="light dark"/>
+      <link rel="manifest" href="/manifest.json"/>
+    </head>
+    <body className={`${inter.className}`}>
+    <GoogleAnalytics/>
+    <main className="min-h-screen">
           {children}
         </main>
       </body>

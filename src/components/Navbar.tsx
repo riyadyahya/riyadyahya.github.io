@@ -17,11 +17,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-700">
+    <nav className="fixed w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-3">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-600 dark:border-blue-400">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-600">
               <Image
                 src={profile}
                 alt="Riyad Yahya"
@@ -32,7 +32,7 @@ const Navbar = () => {
             </div>
             <Link href="/" className="text-xl font-bold">
               Riyad Yahya
-              <span className="text-sm font-normal text-gray-600 dark:text-gray-400 block">
+              <span className="text-sm font-normal text-gray-600 block">
                 Senior Software Engineer & Engineering Leader
               </span>
             </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
               >
                 {item.name}
               </Link>
@@ -58,7 +58,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -83,7 +83,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
