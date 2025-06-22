@@ -96,12 +96,13 @@ export const SKILLS_DETAILED = {
 export const EXPERIENCE = {
   coretava: {
     company: "Coretava",
+    website: "https://coretava.com",
     location: "Palestinian Authority",
     positions: [
       {
         title: "Lead Software Engineer",
-        startDate: new Date(2020, 2, 1), // March 2020
-        endDate: undefined, // Present
+        startDate: new Date(2020, 2, 1),
+        endDate: new Date(2025, 6, 30),
         achievements: [
           "Led the design, development, and scaling of Coretava's loyalty platform, driving cross-functional execution and platform growth.",
           "Restructured teams into specialized frontend/backend units, reducing cross-team blockers by 50% and increasing sprint velocity by 25%.",
@@ -144,6 +145,7 @@ export const EXPERIENCE = {
   },
   toptal: {
     company: "Toptal",
+    website: "https://toptal.com",
     location: "Palestinian Authority",
     positions: [
       {
@@ -160,6 +162,7 @@ export const EXPERIENCE = {
   },
   freightos: {
     company: "Freightos",
+    website: "https://freightos.com",
     location: "Palestinian Authority",
     positions: [
       {

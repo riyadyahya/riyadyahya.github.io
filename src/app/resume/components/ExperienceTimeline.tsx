@@ -7,6 +7,7 @@ export default function ExperienceTimeline() {
         companyData.positions.map(position => ({
             ...position,
             company: companyData.company,
+            website: companyData.website,
             location: companyData.location,
             companyKey
         }))
@@ -42,7 +43,18 @@ export default function ExperienceTimeline() {
                                     </div>
                                 </div>
                                 <div className="text-xs text-gray-500 mb-2">
-                                    {position.company} • {formatDateRange(position.startDate, position.endDate)} ({calculateDuration(position.startDate, position.endDate)})
+                                    {position.website ? (
+                                        <a 
+                                            href={position.website} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="text-blue-600 hover:text-blue-800 underline"
+                                        >
+                                            {position.company}
+                                        </a>
+                                    ) : (
+                                        position.company
+                                    )} • {formatDateRange(position.startDate, position.endDate)} ({calculateDuration(position.startDate, position.endDate)})
                                 </div>
                                 <ul className="list-disc text-sm space-y-1 ml-4">
                                     {position.achievements.map((achievement, achievementIndex) => (
