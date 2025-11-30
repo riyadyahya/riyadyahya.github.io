@@ -39,7 +39,7 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
 export const PERSONAL_INFO = {
   name: "Riyad Yahya",
   title: "Lead Software Engineer | Scalable Platforms & Product Growth",
-  summary: "Senior Software Engineer and Engineering Leader with over 9 years of experience building scalable SaaS products across loyalty platforms, e-commerce, and conversation AI. He specializes in full-stack development with expertise in Python (FastAPI), Node.js, React.js, and the MERN stack (MongoDB, Express.js, React.js, Node.js), along with TypeScript, scalable architectures, and DevOps practices. Currently working on conversation AI platforms at Instack AI and Dataqueue, building Python-based backends with FastAPI, React.js frontends, and managing DevOps infrastructure on AWS ECS and GCP GKE. Previously, as the Software Lead at Coretava, he oversaw a team of 6–10 engineers, restructured the engineering organization for improved efficiency, and drove significant technical upgrades including modular backend architecture and broad integration support. Riyad combines deep technical knowledge with strategic product thinking, enabling cross-functional collaboration and success in high-growth environments.",
+  summary: "Senior Software Engineer and Engineering Leader with over 9 years of experience building scalable SaaS products across loyalty platforms, e-commerce, and conversation AI. He specializes in full-stack development with expertise in Python (FastAPI), Node.js, React.js, and the MERN stack (MongoDB, Express.js, React.js, Node.js), along with TypeScript, scalable architectures, and DevOps practices. Currently working on conversation AI platforms at Dataqueue, building Python-based backends with FastAPI, React.js frontends, and managing DevOps infrastructure on GCP GKE. Previously, as the Software Lead at Coretava, he oversaw a team of 6–10 engineers, restructured the engineering organization for improved efficiency, and drove significant technical upgrades including modular backend architecture and broad integration support. Riyad combines deep technical knowledge with strategic product thinking, enabling cross-functional collaboration and success in high-growth environments.",
   profileImage: "/profile.jpg"
 };
 
@@ -94,25 +94,6 @@ export const SKILLS_DETAILED = {
 };
 
 export const EXPERIENCE = {
-  instack: {
-    company: "Instack AI",
-    website: "https://aivocall.com",
-    location: "Remote",
-    positions: [
-      {
-        title: "Senior Software Engineer",
-        startDate: new Date(2025, 8, 5), // September 5, 2025
-        endDate: undefined, // Present
-        achievements: [
-          "Leading Python backend development for a conversation AI platform, architecting scalable FastAPI services that power real-time AI interactions.",
-          "Designing and implementing high-performance Python-based RESTful APIs using FastAPI, ensuring optimal response times and system reliability.",
-          "Developing robust Python backend services with focus on async programming, data processing, and AI integration for conversational experiences.",
-          "Managing DevOps infrastructure using AWS ECS, including container orchestration, CI/CD pipelines, and cloud resource management for scalable deployments.",
-          "Building responsive React.js frontend interfaces and collaborating on full-stack development to deliver end-to-end features."
-        ]
-      }
-    ]
-  },
   dataqueue: {
     company: "Dataqueue",
     website: "https://www.dataqueue.ai/",
