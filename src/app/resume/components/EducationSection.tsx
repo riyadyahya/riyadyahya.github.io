@@ -1,11 +1,9 @@
-import { GraduationCap } from 'lucide-react';
 import { EDUCATION, formatDateRange } from '@/constants';
 
 export default function EducationSection() {
   return (
     <section>
-      <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        <GraduationCap className="w-5 h-5" />
+      <h2 className="text-xl font-bold text-gray-800 mb-4">
         Education
       </h2>
       <div className="mb-2">

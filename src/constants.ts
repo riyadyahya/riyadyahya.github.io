@@ -39,7 +39,7 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
 export const PERSONAL_INFO = {
   name: "Riyad Yahya",
   title: "Lead Software Engineer | Scalable Platforms & Product Growth",
-  summary: "Senior Software Engineer and Engineering Leader with over 7 years of experience building scalable SaaS products, particularly in the loyalty and e-commerce space. He specializes in full-stack development using the MERN stack (MongoDB, Express.js, React.js, Node.js), with strong expertise in TypeScript, scalable architectures, and DevOps practices. As the Software Lead at Coretava, he oversaw a team of 6–10 engineers, restructured the engineering organization for improved efficiency, and drove significant technical upgrades, including modular backend architecture and broad integration support with platforms like Shopify, VTEX, and Magento. Riyad combines deep technical knowledge with strategic product thinking, enabling cross-functional collaboration and success in high-growth environments.",
+  summary: "Senior Software Engineer and Engineering Leader with over 9 years of experience building scalable SaaS products across loyalty platforms, e-commerce, and conversation AI. He specializes in full-stack development with expertise in Python (FastAPI), Node.js, React.js, and the MERN stack (MongoDB, Express.js, React.js, Node.js), along with TypeScript, scalable architectures, and DevOps practices. Currently working on conversation AI platforms at Instack AI and Dataqueue, building Python-based backends with FastAPI, React.js frontends, and managing DevOps infrastructure on AWS ECS and GCP GKE. Previously, as the Software Lead at Coretava, he oversaw a team of 6–10 engineers, restructured the engineering organization for improved efficiency, and drove significant technical upgrades including modular backend architecture and broad integration support. Riyad combines deep technical knowledge with strategic product thinking, enabling cross-functional collaboration and success in high-growth environments.",
   profileImage: "/profile.jpg"
 };
 
@@ -94,6 +94,47 @@ export const SKILLS_DETAILED = {
 };
 
 export const EXPERIENCE = {
+  instack: {
+    company: "Instack AI",
+    website: "https://aivocall.com",
+    location: "Remote",
+    positions: [
+      {
+        title: "Senior Software Engineer",
+        startDate: new Date(2025, 8, 5), // September 5, 2025
+        endDate: undefined, // Present
+        achievements: [
+          "Leading Python backend development for a conversation AI platform, architecting scalable FastAPI services that power real-time AI interactions.",
+          "Designing and implementing high-performance Python-based RESTful APIs using FastAPI, ensuring optimal response times and system reliability.",
+          "Developing robust Python backend services with focus on async programming, data processing, and AI integration for conversational experiences.",
+          "Managing DevOps infrastructure using AWS ECS, including container orchestration, CI/CD pipelines, and cloud resource management for scalable deployments.",
+          "Building responsive React.js frontend interfaces and collaborating on full-stack development to deliver end-to-end features."
+        ]
+      }
+    ]
+  },
+  dataqueue: {
+    company: "Dataqueue",
+    website: "https://www.dataqueue.ai/",
+    location: "Remote",
+    positions: [
+      {
+        title: "Senior Software Engineer",
+        startDate: new Date(2025, 6, 1), // July 1, 2025
+        endDate: undefined, // Present
+        achievements: [
+          "Developing a conversation AI platform using Python, Node.js, and React.js, delivering scalable AI-powered conversational experiences.",
+          "Building robust backend services with Python and Node.js, ensuring high performance and reliability for real-time AI interactions.",
+          "Creating responsive and intuitive React.js frontend interfaces for seamless user engagement across web platforms.",
+          "Implementing and managing Stripe integration for payment processing and subscription management.",
+          "Developing WhatsApp integration for messaging and conversational AI interactions.",
+          "Building SIP integrations with Livekit, Asterisk, and Vital PBX for telephony infrastructure and voice communication.",
+          "Handling DevOps operations using GCP GKE (Google Kubernetes Engine), managing containerized deployments, orchestration, and cloud infrastructure for optimal scalability and reliability.",
+          "Implementing full-stack solutions combining Python backend services, Node.js APIs, and React.js frontend components for end-to-end feature delivery."
+        ]
+      }
+    ]
+  },
   coretava: {
     company: "Coretava",
     website: "https://coretava.com",
@@ -102,7 +143,7 @@ export const EXPERIENCE = {
       {
         title: "Lead Software Engineer",
         startDate: new Date(2020, 2, 1),
-        endDate: new Date(2025, 6, 30),
+        endDate: new Date(2025, 6, 1), // July 1, 2025
         achievements: [
           "Led the design, development, and scaling of Coretava's loyalty platform, driving cross-functional execution and platform growth.",
           "Restructured teams into specialized frontend/backend units, reducing cross-team blockers by 50% and increasing sprint velocity by 25%.",
@@ -139,23 +180,6 @@ export const EXPERIENCE = {
           "Spearheaded development of the React/Redux admin dashboard, customer-facing Gamibot widget, and JavaScript SDK – critical tools for internal operations and client integration.",
           "Managed frontend deployment pipeline using AWS S3 + CloudFront CDN, ensuring high-performance global access to the widget and dashboard.",
           "Delivered a production-ready MVP that successfully onboarded multiple early customers, proving product value and technical scalability."
-        ]
-      }
-    ]
-  },
-  toptal: {
-    company: "Toptal",
-    website: "https://toptal.com",
-    location: "Palestinian Authority",
-    positions: [
-      {
-        title: "Senior Software Engineer",
-        startDate: new Date(2021, 6, 1), // July 2021
-        endDate: undefined, // Present
-        achievements: [
-          "Atlantic Business Technologies: Built React loan application platform with real-time tracking and role-based access, reducing submission errors by 40%",
-          "Perpetuating Inc.: Developed full-stack event management system (React/ Node.js) featuring Stripe payments and 30% faster load times via lazy loading",
-          "DigiTech LLC: Engineered WebRTC streaming platform with real-time chat and customizable dashboards, maintaining 99% uptime during peak traffic"
         ]
       }
     ]

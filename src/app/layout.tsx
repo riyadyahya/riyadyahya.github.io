@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Inter } from "next/font/google";
 import profile from '../assets/profile.jpg';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import {PERSONAL_INFO, TOP_SKILLS} from "@/constants";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://riyadyahya.github.io'),
@@ -123,7 +120,7 @@ export default function RootLayout({
       <meta name="color-scheme" content="light dark"/>
       <link rel="manifest" href="/manifest.json"/>
     </head>
-    <body className={`${inter.className}`}>
+    <body className="font-sans">
     <GoogleAnalytics/>
     <main className="min-h-screen">
           {children}
