@@ -42,4 +42,3 @@ next-env.d.ts
 
 # playwright MCP screenshots and logs
 .playwright-mcp/
-home-*.png
