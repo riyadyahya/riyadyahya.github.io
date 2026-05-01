@@ -1,102 +1,94 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import profile from '../assets/profile.jpg';
-import AppointmentButton from './AppointmentButton';
+
+const navItems = [
+  { name: 'Now', href: '#now' },
+  { name: 'Work', href: '#experience' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Contact', href: '#contact' },
+];
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-3">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-600">
-              <Image
-                src={profile}
-                alt="Riyad Yahya"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <Link href="/" className="text-xl font-bold">
-              Riyad Yahya
-              <span className="text-sm font-normal text-gray-600 block">
-                Senior Software Engineer & Engineering Leader
-              </span>
+    <header
+      className={`fixed top-0 inset-x-0 z-50 no-print transition-colors ${
+        scrolled ? 'bg-white/85 backdrop-blur border-b border-neutral-200' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-4xl mx-auto px-5 sm:px-6">
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="text-[15px] font-medium tracking-tight text-neutral-950">
+            Riyad Yahya
+          </Link>
+
+          <nav className="hidden sm:flex items-center gap-6 text-[14px] text-neutral-500">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="hover:text-neutral-950 transition-colors"
+              >
+                {item.name}
+              </a>
+            ))}
+            <Link href="/resume" className="hover:text-neutral-950 transition-colors">
+              Resume
             </Link>
-          </div>
+          </nav>
 
-          {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="ml-4">
-              <AppointmentButton />
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none"
-            >
-              <span className="sr-only">Open main menu</span>
-              {!isMenuOpen ? (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+          <button
+            onClick={() => setIsMenuOpen((v) => !v)}
+            className="sm:hidden p-2 -mr-2 text-neutral-500"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 7h16M4 12h16M4 17h16" />
               )}
-            </button>
-          </div>
+            </svg>
+          </button>
         </div>
-      </div>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
+        {isMenuOpen && (
+          <div className="sm:hidden pb-4 border-b border-neutral-200">
+            <div className="flex flex-col gap-3 text-[15px] text-neutral-500">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:text-neutral-950"
+                >
+                  {item.name}
+                </a>
+              ))}
               <Link
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                href="/resume"
                 onClick={() => setIsMenuOpen(false)}
+                className="hover:text-neutral-950"
               >
-                {item.name}
+                Resume
               </Link>
-            ))}
-            <div className="px-3 py-2">
-              <AppointmentButton />
             </div>
           </div>
-        </div>
-      )}
-    </nav>
+        )}
+      </div>
+    </header>
   );
 };
 
-export default Navbar; 
+export default Navbar;

@@ -1,46 +1,110 @@
 import Image from 'next/image';
 import profile from '../assets/profile.jpg';
-import { PERSONAL_INFO } from '@/constants';
+import { CONTACT_INFO, PERSONAL_INFO } from '@/constants';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="text-center">
-          <div className="mb-8 flex justify-center">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-600 shadow-lg">
-              <Image
-                src={profile}
-                alt={PERSONAL_INFO.name}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+    <section className="pt-32 pb-16 sm:pt-40 sm:pb-20">
+      <div className="max-w-4xl mx-auto px-5 sm:px-6">
+        <div className="flex items-center gap-4 mb-10">
+          <div className="relative w-14 h-14 rounded-full overflow-hidden ring-1 ring-neutral-200">
+            <Image src={profile} alt={PERSONAL_INFO.name} fill className="object-cover" priority />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-            Hi, I&apos;m <span className="text-blue-600">{PERSONAL_INFO.name}</span>
-          </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto">
-            {PERSONAL_INFO.title}
-          </p>
-          <p className="text-lg text-gray-600 mb-8 max-w-5xl mx-auto">
-            {PERSONAL_INFO.summary}
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="#contact"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Get in Touch
-            </a>
-            <a
-              href="#experience"
-              className="bg-gray-200 text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-300 transition-colors"
-            >
-              View Experience
-            </a>
+          <div className="flex items-center gap-2 text-[13px] text-neutral-500">
+            <span className="relative flex w-2 h-2">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
+              <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-500" />
+            </span>
+            Available for fractional CTO &amp; senior engineering work
           </div>
+        </div>
+
+        <h1 className="text-[34px] sm:text-[44px] leading-[1.12] tracking-tight font-semibold mb-6 text-neutral-950">
+          Senior software engineer and{' '}
+          <span className="text-neutral-400">fractional CTO</span>,
+          ten years in.
+        </h1>
+
+        <div className="space-y-4 text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch]">
+          <p>
+            I&apos;m currently full-time at{' '}
+            <a
+              href="https://www.dataqueue.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
+            >
+              DataQueue
+            </a>
+            , building a conversational AI platform on Next.js, NestJS, and GKE. On the side I take a small number
+            of fractional engagements — most recently as CTO at{' '}
+            <a
+              href="https://instack.com.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
+            >
+              Instack AI
+            </a>
+            , and engineering work at{' '}
+            <a
+              href="https://yallabites.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
+            >
+              Yalla Bites
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://www.bidsource.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
+            >
+              BidSource
+            </a>
+            .
+          </p>
+          <p>
+            Full-stack on Next.js / NestJS with multi-cloud DevOps across AWS, GCP, and Vercel. My delivery is
+            accelerated by Claude Code, Cursor, and a stack of custom subagents I&apos;ve tuned over the past year.
+            Before this I was Lead Software Engineer at Coretava for ~5 years.
+          </p>
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-neutral-950 text-white hover:bg-neutral-800 transition-colors"
+          >
+            Get in touch
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a
+            href={CONTACT_INFO.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-neutral-500 hover:text-neutral-950 transition-colors"
+          >
+            LinkedIn ↗
+          </a>
+          <a
+            href={CONTACT_INFO.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-neutral-500 hover:text-neutral-950 transition-colors"
+          >
+            GitHub ↗
+          </a>
+          <a
+            href={`mailto:${CONTACT_INFO.email}`}
+            className="text-neutral-500 hover:text-neutral-950 transition-colors"
+          >
+            Email ↗
+          </a>
         </div>
       </div>
     </section>

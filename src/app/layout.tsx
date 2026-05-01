@@ -1,8 +1,15 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import profile from '../assets/profile.jpg';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import {PERSONAL_INFO, TOP_SKILLS} from "@/constants";
+import { PERSONAL_INFO, TOP_SKILLS } from "@/constants";
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://riyadyahya.github.io'),
@@ -37,21 +44,9 @@ export const metadata: Metadata = {
       { url: '/favicon.ico', sizes: '32x32', type: 'image/ico' },
     ],
     other: [
-      {
-        rel: 'mask-icon',
-        url: '/favicon.ico',
-        color: '#2563eb'
-      },
-      {
-        rel: 'icon',
-        type: 'image/ico',
-        sizes: '32x32',
-        url: '/favicon.ico'
-      },
-      {
-        rel: 'manifest',
-        url: '/site.webmanifest'
-      }
+      { rel: 'mask-icon', url: '/favicon.ico', color: '#0a0a0a' },
+      { rel: 'icon', type: 'image/ico', sizes: '32x32', url: '/favicon.ico' },
+      { rel: 'manifest', url: '/site.webmanifest' }
     ]
   },
   openGraph: {
@@ -87,22 +82,20 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://riyadyahya.github.io",
-    languages: {
-      'en-US': 'https://riyadyahya.github.io',
-    },
+    languages: { 'en-US': 'https://riyadyahya.github.io' },
   },
   verification: {
     google: "K_xsDJU3vPXmT5OKdGadFK73P6sv8UJDo48vPZO4XxY",
   },
   other: {
-    'msapplication-TileColor': '#2563eb',
+    'msapplication-TileColor': '#ffffff',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
     'apple-mobile-web-app-title': 'Riyad Yahya Portfolio',
     'application-name': 'Riyad Yahya Portfolio',
     'msapplication-tap-highlight': 'no',
-    'theme-color': '#2563eb',
+    'theme-color': '#ffffff',
   },
 };
 
@@ -112,20 +105,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
     <head>
       <title>{`${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`}</title>
       <link rel="shortcut icon" href="/favicon.ico"/>
-      <meta name="theme-color" content="#2563eb"/>
-      <meta name="color-scheme" content="light dark"/>
+      <meta name="theme-color" content="#ffffff"/>
+      <meta name="color-scheme" content="light"/>
       <link rel="manifest" href="/manifest.json"/>
     </head>
-    <body className="font-sans">
-    <GoogleAnalytics/>
-    <main className="min-h-screen">
-          {children}
-        </main>
-      </body>
+    <body className="font-sans antialiased">
+      <GoogleAnalytics/>
+      <main className="min-h-screen">
+        {children}
+      </main>
+    </body>
     </html>
   );
 }

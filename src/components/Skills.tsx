@@ -1,25 +1,27 @@
-import React from 'react';
 import { SKILLS_DETAILED } from '@/constants';
-import { Settings2 } from 'lucide-react';
 
 const Skills = () => {
+  const entries = Object.entries(SKILLS_DETAILED);
+
   return (
-    <section id="skills" className="py-12 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Settings2 className="w-5 h-5" />
-          Skills
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-          {Object.entries(SKILLS_DETAILED).map(([category, items]) => (
-            <div key={category} className="mb-2">
-              <div className="font-semibold text-lg text-gray-900 mb-1">{category}</div>
-              <div className="text-sm text-gray-800">
-                {Array.isArray(items) ? items.join(', ') : items}
-              </div>
+    <section id="skills" className="py-20 border-t border-neutral-200">
+      <div className="max-w-4xl mx-auto px-5 sm:px-6">
+        <div className="flex items-baseline justify-between mb-10">
+          <h2 className="text-[22px] sm:text-[24px] font-semibold tracking-tight text-neutral-950">Skills</h2>
+          <span className="text-[13px] text-neutral-500">By category</span>
+        </div>
+
+        <dl className="divide-y divide-neutral-200">
+          {entries.map(([category, items]) => (
+            <div
+              key={category}
+              className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-2 sm:gap-6 py-4 first:pt-0"
+            >
+              <dt className="text-[14px] font-medium text-neutral-950">{category}</dt>
+              <dd className="text-[15px] leading-[1.65] text-neutral-700">{items.join(', ')}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   );
