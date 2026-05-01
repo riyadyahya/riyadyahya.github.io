@@ -39,79 +39,154 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
 export const PERSONAL_INFO = {
   name: "Riyad Yahya",
   title: "Lead Software Engineer | Scalable Platforms & Product Growth",
-  summary: "Senior Software Engineer and Engineering Leader with over 9 years of experience building scalable SaaS products across loyalty platforms, e-commerce, and conversation AI. He specializes in full-stack development with expertise in Python (FastAPI), Node.js, React.js, and the MERN stack (MongoDB, Express.js, React.js, Node.js), along with TypeScript, scalable architectures, and DevOps practices. Currently working on conversation AI platforms at Dataqueue, building Python-based backends with FastAPI, React.js frontends, and managing DevOps infrastructure on GCP GKE. Previously, as the Software Lead at Coretava, he oversaw a team of 6–10 engineers, restructured the engineering organization for improved efficiency, and drove significant technical upgrades including modular backend architecture and broad integration support. Riyad combines deep technical knowledge with strategic product thinking, enabling cross-functional collaboration and success in high-growth environments.",
+  summary: "AI-augmented Senior Engineer and Fractional CTO, ten years in. Currently full-time at DataQueue with selected fractional engagements at Instack AI, Yalla Bites, and BidSource. Full-stack Next.js / NestJS with multi-cloud DevOps, accelerated by a stack of AI dev tools — Claude Code, Cursor, and custom subagents. Earlier: Software Lead at Coretava.",
   profileImage: "/profile.jpg"
 };
 
 export const TOP_SKILLS = [
   'Full-stack Development',
-  'MERN Stack',
+  'Next.js',
   'TypeScript',
-  'React',
-  'Node.js',
   'NestJS',
+  'Node.js',
+  'React',
+  'MongoDB',
+  'MERN Stack',
+  'AI Agents',
+  'Voice AI',
+  'Conversational AI',
+  'AI-Augmented Development',
+  'Claude Code',
   'Software Architecture',
-  'API Integration',
   'Microservices',
   'AWS',
+  'GCP',
   'Docker',
   'Kubernetes',
-  'Agile Software Development',
-  'Mentorship',
+  'Vercel',
+  'Terraform',
   'CI/CD',
-  'BigQuery',
-  'Shopify',
-  'E-commerce',
+  'DevOps',
+  'Fractional CTO',
   'Team Leadership',
-  'DevOps'
+  'Mentorship',
+  'Stripe Integration',
+  'E-commerce',
+  'BigQuery',
+  'Agile Software Development'
 ];
 
 export const SKILLS_DETAILED = {
   Languages: [
-    'JavaScript', 'TypeScript', 'CSS', 'HTML', 'HTML5', 'ECMAScript (ES6)', 'CSS3', 'GraphQL', 'Python', 'Java', 'SQL'
+    'TypeScript', 'JavaScript', 'Python', 'SQL', 'GraphQL', 'HTML', 'CSS'
   ],
-  Frameworks: [
-    'Redux', 'NestJS', 'Next.js', 'Material UI', 'Bootstrap', 'Express.js', 'Jest', 'Flask'
+  Frontend: [
+    'Next.js', 'React', 'Redux', 'MobX', 'Tailwind CSS', 'Material UI', 'Bootstrap', 'Storybook', 'Server-side Rendering (SSR)', 'Responsive Web Design'
   ],
-  'Libraries/APIs': [
-    'React', 'MobX', 'Node.js', 'REST APIs', 'Stripe', 'Stripe Connect', 'Stripe API', 'Twilio API', 'Liquid', 'OpenAI API', 'SendGrid API', 'Llama API'
+  Backend: [
+    'Node.js', 'NestJS', 'Express.js', 'Payload CMS', 'FastAPI', 'Flask', 'REST APIs', 'GraphQL APIs', 'WebSockets', 'Webhooks', 'Microservices', 'Event-driven Architecture'
   ],
-  Tools: [
-    'Webpack', 'Figma', 'Stripe Checkout', 'Git', 'Google Analytics', 'GitHub', 'Amazon Elastic Container Service (ECS)', 'Mocha', 'Jenkins', 'Amazon EKS', 'Kibana', 'Zapier', 'Sentry', 'Amazon Cognito', 'Whisper', 'ChatGPT', 'Auth0'
+  'Databases & Storage': [
+    'MongoDB', 'PostgreSQL', 'Supabase', 'BigQuery', 'Firebase', 'Amazon S3'
   ],
-  Paradigms: [
-    'Microservices', 'Responsive Web Design (RWD)', 'Search Engine Optimization (SEO)', 'Event-driven Architecture', 'Agile Software Development'
+  'DevOps & Cloud': [
+    'GCP (GKE)', 'AWS (ECS, EC2, EKS, Lambda, S3, CloudFront)', 'Vercel', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Jenkins', 'CI/CD Pipelines'
   ],
-  Platforms: [
-    'Google Cloud Platform (GCP)', 'Web', 'Firebase', 'Docker', 'Kubernetes', 'Amazon Web Services (AWS)', 'AWS Lambda', 'Amazon EC2', 'Shopify', 'Heroku', 'Vertex AI', 'WordPress', 'Apache2', 'Ollama', 'Twilio'
+  'AI & Voice': [
+    'LiveKit', 'Deepgram', 'ElevenLabs', 'OpenAI', 'Whisper', 'Llama', 'Ollama', 'Vertex AI', 'AI Agents', 'Large Language Models (LLMs)', 'Speech-to-Text', 'Text-to-Speech', 'Asterisk', 'Vital PBX', 'SIP'
   ],
-  Storage: [
-    'MongoDB', 'Amazon S3 (AWS S3)', 'Database Architecture', 'JSON', 'Databases', 'Google Cloud', 'PostgreSQL'
+  'Integrations & APIs': [
+    'Stripe (Connect, Checkout)', 'Twilio', 'SendGrid', 'Nash', 'Shippo', 'WhatsApp', 'Auth0', 'Amazon Cognito', 'Shopify', 'VTEX', 'Magento', 'WooCommerce', 'Pub/Sub', 'Apollo'
   ],
-  Other: [
-    'Front-end', 'WebSockets', 'Full-stack', 'Third-party Integration', 'User Interface (UI)', 'Widgets', 'Front-end Architecture', 'Architecture', 'APIs', 'CORS', 'Web Development', 'Full-stack Development', 'Animation', 'Deployment', 'Responsive Web Apps', 'Webhooks', 'UI Components', 'Design Systems', 'MERN Stack', 'Front-end Development', 'Pixel Perfect', 'Responsiveness', 'Server-side Rendering (SSR)', 'Startups', 'Back-end', 'API Integration', 'CI/CD Pipelines', 'Data Structures', 'Solution Architecture', 'Technical Leadership', 'Software Architecture', 'Data Visualization', 'Booking Systems', 'eCommerce', 'Mobile Video', 'Storybook', 'Content Management Systems (CMS)', 'CTO', 'Leadership', 'Digital Marketing', 'OpenAI', 'OpenAI GPT-4 API', 'Cursor AI', 'Discord Bots', 'Web Scraping', 'Large Language Models (LLMs)', 'Security', 'Pub/Sub', 'Apollo', 'Proxy Servers', 'ElevenLabs Solutions', 'Speech to Text', 'Text to Speech (TTS)', 'AI Agents', 'Llama', 'Azure Text to Speech'
+  'Testing & Tooling': [
+    'Jest', 'Mocha', 'Sentry', 'Kibana', 'Google Analytics', 'Git', 'GitHub', 'Webpack', 'Figma'
+  ],
+  'AI-Augmented Development': [
+    'Claude Code', 'Cursor AI', 'Claude Agent SDK', 'Custom Subagents', 'MCP Servers', 'Agentic Workflows', 'AI-Assisted Code Review', 'Automated Codebase Exploration', 'Anthropic API', 'OpenAI API'
+  ],
+  'Architecture & Leadership': [
+    'Software Architecture', 'Solution Architecture', 'Technical Leadership', 'MERN Stack', 'Agile Software Development', 'Mentorship', 'Team Restructuring', 'Third-party Integration'
   ]
 };
 
 export const EXPERIENCE = {
-  dataqueue: {
-    company: "Dataqueue",
-    website: "https://www.dataqueue.ai/",
+  instack: {
+    company: "Instack AI",
+    website: "https://instack.com.au/",
     location: "Remote",
     positions: [
       {
-        title: "Senior Software Engineer",
+        title: "Fractional CTO",
+        startDate: new Date(2025, 10, 14), // November 14, 2025
+        endDate: undefined, // Present
+        achievements: [
+          "Leading a 4-engineer team building a multi-tenant SaaS voice agent platform that lets customers design complex voice workflows, connect Twilio phone numbers and calendars, and upload knowledge bases to handle inbound and outbound calls.",
+          "Architected the full-stack application on Next.js + Supabase deployed to Vercel, simplifying the prior stack to accelerate product iteration without sacrificing scalability.",
+          "Built and deployed LiveKit voice agents on AWS ECS for real-time, low-latency telephony at production scale.",
+          "Integrated Deepgram (speech-to-text), ElevenLabs (text-to-speech), and OpenAI for reasoning to deliver natural, low-latency conversational experiences.",
+          "Established GitHub Actions CI/CD pipelines and Sentry monitoring across environments, hardening release safety and observability for the early-stage platform.",
+          "Drove technical strategy, hiring guidance, and engineering practices — balancing rapid feature delivery with platform stability and long-term architecture decisions."
+        ]
+      }
+    ]
+  },
+  yallabites: {
+    company: "Yalla Bites",
+    website: "https://yallabites.com/",
+    location: "Remote",
+    positions: [
+      {
+        title: "Backend & DevOps Engineer (Part-time)",
+        startDate: new Date(2025, 10, 1), // November 1, 2025
+        endDate: undefined, // Present
+        achievements: [
+          "Building backend services for a US-based home-chef marketplace that connects customers with local cooks and powers hyper-local, on-demand meal delivery.",
+          "Developing the platform on Next.js + Payload CMS + Supabase deployed to Vercel, powering both the consumer storefront and the operations tooling.",
+          "Integrated Stripe for end-to-end payments, payouts, and subscription flows across the marketplace.",
+          "Integrated Nash for delivery orchestration and Shippo for shipping label generation, streamlining fulfillment for both delivery and shipping use cases.",
+          "Owning DevOps with GitHub Actions CI/CD pipelines, Vercel-based deployments, and Sentry observability for fast, safe, and observable releases."
+        ]
+      }
+    ]
+  },
+  dataqueue: {
+    company: "DataQueue",
+    website: "https://www.dataqueue.ai/",
+    location: "Remote",
+    featured: true,
+    positions: [
+      {
+        title: "Senior Full-Stack & DevOps Engineer",
         startDate: new Date(2025, 6, 1), // July 1, 2025
         endDate: undefined, // Present
         achievements: [
-          "Developing a conversation AI platform using Python, Node.js, and React.js, delivering scalable AI-powered conversational experiences.",
-          "Building robust backend services with Python and Node.js, ensuring high performance and reliability for real-time AI interactions.",
-          "Creating responsive and intuitive React.js frontend interfaces for seamless user engagement across web platforms.",
+          "Developing a conversation AI platform end-to-end using Next.js, NestJS, and MongoDB, delivering scalable AI-powered conversational experiences.",
+          "Owning DevOps on GCP GKE (Google Kubernetes Engine) — managing containerized deployments, cluster orchestration, networking, and cloud infrastructure for production scalability and reliability.",
+          "Building robust NestJS backend services backed by MongoDB, ensuring high performance and reliability for real-time AI interactions.",
+          "Creating responsive and intuitive Next.js frontend interfaces for seamless user engagement across web platforms.",
           "Implementing and managing Stripe integration for payment processing and subscription management.",
           "Developing WhatsApp integration for messaging and conversational AI interactions.",
-          "Building SIP integrations with Livekit, Asterisk, and Vital PBX for telephony infrastructure and voice communication.",
-          "Handling DevOps operations using GCP GKE (Google Kubernetes Engine), managing containerized deployments, orchestration, and cloud infrastructure for optimal scalability and reliability.",
-          "Implementing full-stack solutions combining Python backend services, Node.js APIs, and React.js frontend components for end-to-end feature delivery."
+          "Building SIP integrations with LiveKit, Asterisk, and Vital PBX for telephony infrastructure and voice communication.",
+          "Implementing full-stack solutions combining NestJS APIs and Next.js frontend components for end-to-end feature delivery."
+        ]
+      }
+    ]
+  },
+  bidsource: {
+    company: "BidSource",
+    website: "https://www.bidsource.io/",
+    location: "Remote",
+    positions: [
+      {
+        title: "Full-Stack Engineer (Part-time)",
+        startDate: new Date(2025, 5, 16), // June 16, 2025
+        endDate: undefined, // Present
+        achievements: [
+          "Building a logistics rate management and allocation platform that centralizes carrier rates, vendor capabilities, and pricing strategy for freight forwarders, eliminating fragmented spreadsheet-based pricing workflows.",
+          "Developing the full-stack application on Next.js + Supabase deployed to Vercel, owning features end-to-end from data model to UI.",
+          "Designed and shipped Opportunities — a workflow that lets forwarders combine multiple buy rates, generate batch carrier outreach emails, and create derived sell rates in a single flow, replacing multi-day manual quoting cycles.",
+          "Built carrier service area configuration, carrier and customer management, and accessorial configuration modules forming the operational backbone of the platform.",
+          "Built AWS Lambda functions for rate allocation logic and provisioned cloud infrastructure with Terraform for reproducible, version-controlled environments."
         ]
       }
     ]

@@ -8,12 +8,15 @@ export default function ExperienceTimeline() {
             company: companyData.company,
             website: companyData.website,
             location: companyData.location,
+            featured: 'featured' in companyData ? companyData.featured : false,
             companyKey
         }))
     );
 
-    // Sort positions by start date (most recent first)
+    // Sort: featured companies first, then by start date (most recent first)
     const sortedPositions = allPositions.sort((a, b) => {
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
         return b.startDate.getTime() - a.startDate.getTime();
     });
 
@@ -33,7 +36,18 @@ export default function ExperienceTimeline() {
                                     </div>
                                 </div>
                                 <div className="text-xs text-gray-500 mb-2">
-                                    {position.company} • {formatDateRange(position.startDate, position.endDate)} ({calculateDuration(position.startDate, position.endDate)})
+                                    {position.website ? (
+                                        <a
+                                            href={position.website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-blue-600 hover:underline"
+                                        >
+                                            {position.company}
+                                        </a>
+                                    ) : (
+                                        position.company
+                                    )} • {formatDateRange(position.startDate, position.endDate)} ({calculateDuration(position.startDate, position.endDate)})
                                 </div>
                                 <ul className="list-disc text-sm space-y-1 ml-4">
                                     {position.achievements.map((achievement, achievementIndex) => (
