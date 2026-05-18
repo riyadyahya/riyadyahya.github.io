@@ -15,13 +15,13 @@ const Hero = () => {
               <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
               <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-500" />
             </span>
-            Available for fractional CTO &amp; senior engineering work
+            Available for senior &amp; lead engineering work
           </div>
         </div>
 
         <h1 className="text-[34px] sm:text-[44px] leading-[1.12] tracking-tight font-semibold mb-6 text-neutral-950">
-          Senior software engineer and{' '}
-          <span className="text-neutral-400">fractional CTO</span>,
+          Senior and{' '}
+          <span className="text-neutral-400">lead software engineer</span>,
           ten years in.
         </h1>
 
@@ -36,35 +36,8 @@ const Hero = () => {
             >
               DataQueue
             </a>
-            , building a conversational AI platform on Next.js, NestJS, and GKE. On the side I take a small number
-            of fractional engagements — most recently as CTO at{' '}
-            <a
-              href="https://instack.com.au/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
-            >
-              Instack AI
-            </a>
-            , and engineering work at{' '}
-            <a
-              href="https://yallabites.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
-            >
-              Yalla Bites
-            </a>{' '}
-            and{' '}
-            <a
-              href="https://www.bidsource.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
-            >
-              BidSource
-            </a>
-            .
+            , building a conversational AI platform on Next.js, NestJS, and GKE — Stripe billing, WhatsApp
+            messaging, and SIP telephony via LiveKit and Asterisk.
           </p>
           <p>
             Full-stack on Next.js / NestJS with multi-cloud DevOps across AWS, GCP, and Vercel. My delivery is

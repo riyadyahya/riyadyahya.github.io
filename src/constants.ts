@@ -39,7 +39,7 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
 export const PERSONAL_INFO = {
   name: "Riyad Yahya",
   title: "Lead Software Engineer | Scalable Platforms & Product Growth",
-  summary: "AI-augmented Senior Engineer and Fractional CTO, ten years in. Currently full-time at DataQueue with selected fractional engagements at Instack AI, Yalla Bites, and BidSource. Full-stack Next.js / NestJS with multi-cloud DevOps, accelerated by a stack of AI dev tools — Claude Code, Cursor, and custom subagents. Earlier: Software Lead at Coretava.",
+  summary: "AI-augmented Lead Software Engineer, ten years in. Currently full-time at DataQueue, building a conversational AI platform on Next.js / NestJS with multi-cloud DevOps, accelerated by a stack of AI dev tools — Claude Code, Cursor, and custom subagents. Earlier: Lead Software Engineer at Coretava.",
   profileImage: "/profile.jpg"
 };
 
@@ -67,7 +67,7 @@ export const TOP_SKILLS = [
   'Terraform',
   'CI/CD',
   'DevOps',
-  'Fractional CTO',
+  'Technical Leadership',
   'Team Leadership',
   'Mentorship',
   'Stripe Integration',
@@ -110,45 +110,6 @@ export const SKILLS_DETAILED = {
 };
 
 export const EXPERIENCE = {
-  instack: {
-    company: "Instack AI",
-    website: "https://instack.com.au/",
-    location: "Remote",
-    positions: [
-      {
-        title: "Fractional CTO",
-        startDate: new Date(2025, 10, 14), // November 14, 2025
-        endDate: undefined, // Present
-        achievements: [
-          "Leading a 4-engineer team building a multi-tenant SaaS voice agent platform that lets customers design complex voice workflows, connect Twilio phone numbers and calendars, and upload knowledge bases to handle inbound and outbound calls.",
-          "Architected the full-stack application on Next.js + Supabase deployed to Vercel, simplifying the prior stack to accelerate product iteration without sacrificing scalability.",
-          "Built and deployed LiveKit voice agents on AWS ECS for real-time, low-latency telephony at production scale.",
-          "Integrated Deepgram (speech-to-text), ElevenLabs (text-to-speech), and OpenAI for reasoning to deliver natural, low-latency conversational experiences.",
-          "Established GitHub Actions CI/CD pipelines and Sentry monitoring across environments, hardening release safety and observability for the early-stage platform.",
-          "Drove technical strategy, hiring guidance, and engineering practices — balancing rapid feature delivery with platform stability and long-term architecture decisions."
-        ]
-      }
-    ]
-  },
-  yallabites: {
-    company: "Yalla Bites",
-    website: "https://yallabites.com/",
-    location: "Remote",
-    positions: [
-      {
-        title: "Backend & DevOps Engineer (Part-time)",
-        startDate: new Date(2025, 10, 1), // November 1, 2025
-        endDate: undefined, // Present
-        achievements: [
-          "Building backend services for a US-based home-chef marketplace that connects customers with local cooks and powers hyper-local, on-demand meal delivery.",
-          "Developing the platform on Next.js + Payload CMS + Supabase deployed to Vercel, powering both the consumer storefront and the operations tooling.",
-          "Integrated Stripe for end-to-end payments, payouts, and subscription flows across the marketplace.",
-          "Integrated Nash for delivery orchestration and Shippo for shipping label generation, streamlining fulfillment for both delivery and shipping use cases.",
-          "Owning DevOps with GitHub Actions CI/CD pipelines, Vercel-based deployments, and Sentry observability for fast, safe, and observable releases."
-        ]
-      }
-    ]
-  },
   dataqueue: {
     company: "DataQueue",
     website: "https://www.dataqueue.ai/",
@@ -168,25 +129,6 @@ export const EXPERIENCE = {
           "Developing WhatsApp integration for messaging and conversational AI interactions.",
           "Building SIP integrations with LiveKit, Asterisk, and Vital PBX for telephony infrastructure and voice communication.",
           "Implementing full-stack solutions combining NestJS APIs and Next.js frontend components for end-to-end feature delivery."
-        ]
-      }
-    ]
-  },
-  bidsource: {
-    company: "BidSource",
-    website: "https://www.bidsource.io/",
-    location: "Remote",
-    positions: [
-      {
-        title: "Full-Stack Engineer (Part-time)",
-        startDate: new Date(2025, 5, 16), // June 16, 2025
-        endDate: undefined, // Present
-        achievements: [
-          "Building a logistics rate management and allocation platform that centralizes carrier rates, vendor capabilities, and pricing strategy for freight forwarders, eliminating fragmented spreadsheet-based pricing workflows.",
-          "Developing the full-stack application on Next.js + Supabase deployed to Vercel, owning features end-to-end from data model to UI.",
-          "Designed and shipped Opportunities — a workflow that lets forwarders combine multiple buy rates, generate batch carrier outreach emails, and create derived sell rates in a single flow, replacing multi-day manual quoting cycles.",
-          "Built carrier service area configuration, carrier and customer management, and accessorial configuration modules forming the operational backbone of the platform.",
-          "Built AWS Lambda functions for rate allocation logic and provisioned cloud infrastructure with Terraform for reproducible, version-controlled environments."
         ]
       }
     ]

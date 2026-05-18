@@ -18,7 +18,7 @@ const Contact = () => {
         </div>
 
         <p className="text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch] mb-10">
-          I&apos;m open to fractional CTO and senior engineering work, consulting on AI / voice
+          I&apos;m open to senior and lead engineering work, consulting on AI / voice
           infrastructure, and the occasional interesting project. The fastest way to reach me is email
           or WhatsApp.
         </p>
