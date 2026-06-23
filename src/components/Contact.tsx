@@ -5,7 +5,7 @@ const links = [
   { label: 'WhatsApp', value: '+970 597 216 925', href: `https://wa.me/970597216925` },
   { label: 'LinkedIn', value: 'linkedin.com/in/riyad-yahya', href: CONTACT_INFO.linkedin },
   { label: 'GitHub', value: 'github.com/riyadyahya', href: CONTACT_INFO.github },
-  { label: 'Calendar', value: 'Book a 30-min intro call', href: 'https://calendar.app.google/5eh6h4PEqgRKrKsA8' },
+  { label: 'Calendar', value: 'Book a 30-min intro call', href: 'https://calendar.app.google/g1xnQQhhXEsXTe2X7' },
 ];
 
 const Contact = () => {
