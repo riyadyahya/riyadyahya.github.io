@@ -38,8 +38,8 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
 
 export const PERSONAL_INFO = {
   name: "Riyad Yahya",
-  title: "Lead Software Engineer | Scalable Platforms & Product Growth",
-  summary: "AI-augmented Lead Software Engineer, ten years in. Currently full-time at DataQueue, building a conversational AI platform on Next.js / NestJS with multi-cloud DevOps, accelerated by a stack of AI dev tools — Claude Code, Cursor, and custom subagents. Earlier: Lead Software Engineer at Coretava.",
+  title: "Lead Software Engineer & Independent Consultant | Scalable Platforms & Product Growth",
+  summary: "AI-augmented software engineer and independent consultant, ten years in. I partner with multiple companies as a fractional senior/lead engineer — building and scaling platforms on Next.js / NestJS with multi-cloud DevOps, accelerated by a stack of AI dev tools like Claude Code, Cursor, and custom subagents. Most recently I led full-stack and DevOps at DataQueue; before that, Lead Software Engineer at Coretava for ~5 years.",
   profileImage: "/profile.jpg"
 };
 
@@ -110,25 +110,43 @@ export const SKILLS_DETAILED = {
 };
 
 export const EXPERIENCE = {
-  dataqueue: {
-    company: "DataQueue",
-    website: "https://www.dataqueue.ai/",
+  independent: {
+    company: "Independent Consulting",
+    website: "",
     location: "Remote",
     featured: true,
     positions: [
       {
-        title: "Senior Full-Stack & DevOps Engineer",
-        startDate: new Date(2025, 6, 1), // July 1, 2025
+        title: "Independent Software Engineer & Consultant",
+        startDate: new Date(2026, 5, 1), // June 2026
         endDate: undefined, // Present
         achievements: [
-          "Developing a conversation AI platform end-to-end using Next.js, NestJS, and MongoDB, delivering scalable AI-powered conversational experiences.",
-          "Owning DevOps on GCP GKE (Google Kubernetes Engine) — managing containerized deployments, cluster orchestration, networking, and cloud infrastructure for production scalability and reliability.",
-          "Building robust NestJS backend services backed by MongoDB, ensuring high performance and reliability for real-time AI interactions.",
-          "Creating responsive and intuitive Next.js frontend interfaces for seamless user engagement across web platforms.",
-          "Implementing and managing Stripe integration for payment processing and subscription management.",
-          "Developing WhatsApp integration for messaging and conversational AI interactions.",
-          "Building SIP integrations with LiveKit, Asterisk, and Vital PBX for telephony infrastructure and voice communication.",
-          "Implementing full-stack solutions combining NestJS APIs and Next.js frontend components for end-to-end feature delivery."
+          "Partner with multiple companies as a fractional senior/lead engineer, shipping full-stack product and platform work across Next.js, NestJS, and Node.js.",
+          "Advise on software architecture, multi-cloud DevOps (AWS, GCP, Vercel), and scalable backend design for early- and growth-stage teams.",
+          "Embed AI-augmented delivery — Claude Code, Cursor, and custom subagents — to accelerate team velocity and raise code quality.",
+          "Build AI, voice, and conversational features end-to-end, from LLM orchestration to real-time telephony and messaging integrations."
+        ]
+      }
+    ]
+  },
+  dataqueue: {
+    company: "DataQueue",
+    website: "https://www.dataqueue.ai/",
+    location: "Remote",
+    positions: [
+      {
+        title: "Senior Full-Stack & DevOps Engineer",
+        startDate: new Date(2025, 6, 1), // July 1, 2025
+        endDate: new Date(2026, 5, 1), // June 1, 2026
+        achievements: [
+          "Built a conversational AI platform end-to-end using Next.js, NestJS, and MongoDB, delivering scalable AI-powered conversational experiences.",
+          "Owned DevOps on GCP GKE (Google Kubernetes Engine) — managing containerized deployments, cluster orchestration, networking, and cloud infrastructure for production scalability and reliability.",
+          "Built robust NestJS backend services backed by MongoDB, ensuring high performance and reliability for real-time AI interactions.",
+          "Created responsive and intuitive Next.js frontend interfaces for seamless user engagement across web platforms.",
+          "Implemented and managed Stripe integration for payment processing and subscription management.",
+          "Developed WhatsApp integration for messaging and conversational AI interactions.",
+          "Built SIP integrations with LiveKit, Asterisk, and Vital PBX for telephony infrastructure and voice communication.",
+          "Implemented full-stack solutions combining NestJS APIs and Next.js frontend components for end-to-end feature delivery."
         ]
       }
     ]

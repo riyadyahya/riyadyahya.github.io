@@ -27,7 +27,13 @@ const Hero = () => {
 
         <div className="space-y-4 text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch]">
           <p>
-            I&apos;m currently full-time at{' '}
+            I work as an independent consultant, partnering with multiple companies on full-stack product and
+            platform engineering — Next.js / NestJS with multi-cloud DevOps across AWS, GCP, and Vercel. My
+            delivery is accelerated by Claude Code, Cursor, and a stack of custom subagents I&apos;ve tuned over
+            the past year.
+          </p>
+          <p>
+            Most recently I led full-stack and DevOps at{' '}
             <a
               href="https://www.dataqueue.ai/"
               target="_blank"
@@ -37,12 +43,8 @@ const Hero = () => {
               DataQueue
             </a>
             , building a conversational AI platform on Next.js, NestJS, and GKE — Stripe billing, WhatsApp
-            messaging, and SIP telephony via LiveKit and Asterisk.
-          </p>
-          <p>
-            Full-stack on Next.js / NestJS with multi-cloud DevOps across AWS, GCP, and Vercel. My delivery is
-            accelerated by Claude Code, Cursor, and a stack of custom subagents I&apos;ve tuned over the past year.
-            Before this I was Lead Software Engineer at Coretava for ~5 years.
+            messaging, and SIP telephony via LiveKit and Asterisk. Before that, Lead Software Engineer at Coretava
+            for ~5 years.
           </p>
         </div>
 

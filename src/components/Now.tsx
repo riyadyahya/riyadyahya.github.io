@@ -1,11 +1,9 @@
-import { EXPERIENCE } from '@/constants';
-
 const CURRENT = {
-  company: EXPERIENCE.dataqueue.company,
-  website: EXPERIENCE.dataqueue.website,
-  role: 'Senior Full-Stack & DevOps Engineer · Full-time',
+  company: 'Independent consulting',
+  website: '',
+  role: 'Fractional senior / lead engineer · multiple companies',
   blurb:
-    'Building a conversational AI platform end-to-end on Next.js + NestJS + MongoDB, deployed on GCP GKE. Stripe billing, WhatsApp messaging, and SIP telephony via LiveKit / Asterisk / Vital PBX.',
+    'Partnering with several teams to ship full-stack product and platform work — Next.js + NestJS with multi-cloud DevOps across AWS, GCP, and Vercel — and embedding AI-augmented delivery via Claude Code, Cursor, and custom subagents. Most recently I built a conversational AI platform on GCP GKE with Stripe billing, WhatsApp messaging, and SIP telephony.',
 };
 
 const Now = () => {
