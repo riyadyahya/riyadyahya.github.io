@@ -1,4 +1,5 @@
-import { EDUCATION, formatDateRange } from '@/constants';
+import { EDUCATION } from '@/constants';
+import DateRange from './DateRange';
 
 export default function EducationSection() {
   return (
@@ -9,7 +10,7 @@ export default function EducationSection() {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-x-6">
         <h3 className="text-[16px] font-semibold text-neutral-950">{EDUCATION.degree}</h3>
         <p className="text-[13px] text-neutral-600">
-          {formatDateRange(EDUCATION.startDate, EDUCATION.endDate)}
+          <DateRange start={EDUCATION.startDate} end={EDUCATION.endDate} />
         </p>
       </div>
       <p className="text-[14px] text-neutral-700">{EDUCATION.university}</p>

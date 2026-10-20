@@ -1,4 +1,6 @@
-import {CLIENTS, EXPERIENCE, formatDateRange, calculateDuration} from '@/constants';
+import {CLIENTS, EXPERIENCE} from '@/constants';
+import {calculateDuration} from '@/utils/dates';
+import DateRange from './DateRange';
 
 export default function ExperienceTimeline() {
     const allPositions = Object.entries(EXPERIENCE).flatMap(([companyKey, companyData]) =>
@@ -42,7 +44,7 @@ export default function ExperienceTimeline() {
                                 ) : (
                                     <span className="font-medium text-neutral-800">{position.company}</span>
                                 )}
-                                {' · '}{formatDateRange(position.startDate, position.endDate)}
+                                {' · '}<DateRange start={position.startDate} end={position.endDate} />
                                 {duration && ` (${duration})`}
                             </p>
                             <ul className="list-disc marker:text-neutral-400 text-[14px] leading-[1.6] text-neutral-800 space-y-1 ml-4">

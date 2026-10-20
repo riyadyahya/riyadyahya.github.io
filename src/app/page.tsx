@@ -5,6 +5,8 @@ import Results from '@/components/Results';
 import Experience from '@/components/Experience';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
+import JsonLd from '@/components/JsonLd';
+import { faqJsonLd } from '@/structuredData';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqJsonLd} />
       <Hero />
       <Services />
       <Results />

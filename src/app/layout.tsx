@@ -4,7 +4,9 @@ import './globals.css';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { PERSONAL_INFO, TOP_SKILLS } from "@/constants";
+import JsonLd from '@/components/JsonLd';
+import { PERSONAL_INFO, SITE_URL, TOP_SKILLS } from "@/constants";
+import { siteJsonLd } from '@/structuredData';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,7 +17,7 @@ const inter = Inter({
 const defaultTitle = `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://riyadyahya.github.io'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: defaultTitle,
     template: `%s | ${PERSONAL_INFO.name}`,
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
     title: defaultTitle,
     description: PERSONAL_INFO.description,
     type: 'website',
-    url: 'https://riyadyahya.github.io',
+    url: SITE_URL,
     siteName: PERSONAL_INFO.name,
     images: [{ url: '/og.png', width: 1200, height: 630, alt: `${PERSONAL_INFO.name}, ${PERSONAL_INFO.title}` }],
   },
@@ -102,6 +104,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
     <body className="font-sans antialiased">
       <GoogleAnalytics/>
+      <JsonLd data={siteJsonLd}/>
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-60 focus:rounded-md focus:bg-neutral-950 focus:px-4 focus:py-2 focus:text-[14px] focus:text-white"
