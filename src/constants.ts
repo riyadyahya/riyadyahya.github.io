@@ -40,10 +40,10 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
 
 export const PERSONAL_INFO = {
   name: "Riyad Yahya",
-  title: "Lead Software Engineer & Independent Consultant",
-  tagline: "I help early- and growth-stage teams ship AI products — and the platforms they run on.",
-  description: "Independent senior engineer helping early- and growth-stage teams ship AI and voice products on Next.js, Supabase, NestJS, AWS and GCP. Ten years in; previously DataQueue, Coretava and Freightos.",
-  summary: "AI-augmented software engineer and independent consultant, ten years in. I partner with multiple companies as a fractional senior/lead engineer — building and scaling platforms on Next.js / NestJS with multi-cloud DevOps, accelerated by a stack of AI dev tools like Claude Code, Cursor, and custom subagents. Most recently I led full-stack and DevOps at DataQueue; before that, Lead Software Engineer at Coretava for ~5 years.",
+  title: "Fractional CTO & Senior Engineer",
+  tagline: "I help early- and growth-stage teams ship AI products, and the platforms they run on.",
+  description: "Fractional CTO and hands-on senior engineer helping early- and growth-stage teams ship AI and voice products on Next.js, Supabase, NestJS, AWS and GCP. Ten years in; previously DataQueue, Coretava and Freightos.",
+  summary: "Fractional CTO and hands-on senior engineer, ten years in. I partner with multiple companies to own architecture and lead engineering while building alongside the team. I ship AI and voice products, and platforms on Next.js / NestJS with multi-cloud DevOps, using AI dev tools like Claude Code, Cursor, and custom subagents. Most recently I led full-stack and DevOps at DataQueue; before that, Lead Software Engineer at Coretava for ~5 years.",
   availability: "Taking on new projects",
   location: "Remote, based in Palestine",
   timezone: "UTC+2, UTC+3 in summer",
@@ -134,13 +134,13 @@ export const EXPERIENCE = {
     featured: true,
     positions: [
       {
-        title: "Independent Software Engineer & Consultant",
+        title: "Fractional CTO & Senior Engineer",
         startDate: new Date(2025, 5, 1), // June 2025
         endDate: undefined, // Present
         achievements: [
-          "Partner with multiple companies as a fractional senior/lead engineer, shipping full-stack product and platform work across Next.js, Supabase, NestJS, Node.js, and Python.",
+          "Partner with multiple companies as a fractional CTO and hands-on senior engineer, shipping full-stack product and platform work across Next.js, Supabase, NestJS, Node.js, and Python.",
           "Advise on software architecture, multi-cloud DevOps (Vercel, AWS, GCP), and scalable backend design for early- and growth-stage teams.",
-          "Embed AI-native delivery — vibe coding for fast prototypes, agentic coding with Claude Code, Cursor, and custom subagents for production — to accelerate team velocity and raise code quality.",
+          "Embed AI-native delivery to speed up teams and raise code quality: vibe coding for fast prototypes, and agentic coding with Claude Code, Cursor, and custom subagents for production.",
           "Build AI, voice, and conversational features end-to-end, from LLM orchestration to real-time telephony and messaging integrations."
         ]
       }
@@ -157,7 +157,7 @@ export const EXPERIENCE = {
         endDate: new Date(2026, 5, 1), // June 1, 2026
         achievements: [
           "Built a conversational AI platform end-to-end using Next.js, NestJS, and MongoDB, delivering scalable AI-powered conversational experiences.",
-          "Owned DevOps on GCP GKE (Google Kubernetes Engine) — managing containerized deployments, cluster orchestration, networking, and cloud infrastructure for production scalability and reliability.",
+          "Owned DevOps on GCP GKE (Google Kubernetes Engine), managing containerized deployments, cluster orchestration, networking, and cloud infrastructure for production scalability and reliability.",
           "Built robust NestJS backend services backed by MongoDB, ensuring high performance and reliability for real-time AI interactions.",
           "Created responsive and intuitive Next.js frontend interfaces for seamless user engagement across web platforms.",
           "Implemented and managed Stripe integration for payment processing and subscription management.",
@@ -198,7 +198,7 @@ export const EXPERIENCE = {
         achievements: [
           "Architected end-to-end Shopify integration via custom apps, enabling seamless merchant onboarding (adopted by 30+ clients within 3 months, expanding TAM by 15%).",
           "Led development of Android/iOS SDKs (complementing web SDKs), reducing client integration time by 40% and accelerating enterprise adoption.",
-          "Co-launched TeamUp – a team-based loyalty product – by building a React Native mobile app that drove a 30% engagement lift in pilot enterprise accounts.",
+          "Co-launched TeamUp, a team-based loyalty product, by building a React Native mobile app that drove a 30% engagement lift in pilot enterprise accounts.",
           "Engineered AWS infrastructure (ECS/EC2/S3/CloudFront) supporting 500% YoY traffic growth with zero downtime during peak events.",
           "Mentored junior engineers on React/Redux best practices and CI/CD standards, reducing production incidents by 50%."
         ]
@@ -210,7 +210,7 @@ export const EXPERIENCE = {
         achievements: [
           "Designed and implemented the initial microservices backend (Node.js/ Express) deployed on AWS ECS. Established public API access via EC2 load balancers, creating a robust infrastructure for growth.",
           "Developed key backend services powering user/tenant management, points lifecycle (earning/redemption), and interactive loyalty mechanics (missions, games, surveys).",
-          "Spearheaded development of the React/Redux admin dashboard, customer-facing Gamibot widget, and JavaScript SDK – critical tools for internal operations and client integration.",
+          "Spearheaded development of the React/Redux admin dashboard, customer-facing Gamibot widget, and JavaScript SDK, critical tools for internal operations and client integration.",
           "Managed frontend deployment pipeline using AWS S3 + CloudFront CDN, ensuring high-performance global access to the widget and dashboard.",
           "Delivered a production-ready MVP that successfully onboarded multiple early customers, proving product value and technical scalability."
         ]
@@ -263,7 +263,7 @@ export const CLIENTS = [
     role: 'Senior Solution Architect & Engineer',
     achievements: [
       'Leading a 4-engineer team building a multi-tenant SaaS voice agent platform: customers design voice workflows, connect Twilio numbers and calendars, and upload knowledge bases to handle inbound and outbound calls.',
-      'Cut the voice agent’s response latency roughly 3x, from 2–3 seconds to about 1 second, so conversations feel real-time.',
+      'Cut the voice agent’s response latency roughly 3x, from 2 or 3 seconds to about 1 second, so conversations feel real-time.',
       'Built and deployed LiveKit voice agents on AWS ECS, with Deepgram speech-to-text, ElevenLabs text-to-speech and OpenAI for reasoning.',
       'Integrated Twilio telephony from the ground up, including regulated-number provisioning, regulatory bundles and toll-free support, plus per-number Stripe billing with failure rollbacks.',
       'Built the structured call-data capture and workflow-variable engine, turning static call flows into data-aware ones.',
@@ -294,22 +294,22 @@ export const CLIENTS = [
 
 export const SERVICES = [
   {
+    title: 'Fractional CTO',
+    problem: 'You need senior technical leadership, but not a full-time CTO yet.',
+    offer: 'I join your team part-time to own architecture decisions, review code, mentor engineers, and set up an AI-assisted workflow (Claude Code, Cursor, custom subagents) that your team can keep running.',
+    proof: 'Leading a four-engineer team at Instack AI today. At Coretava I led 6 to 10 engineers and split them into frontend and backend units: 50% fewer cross-team blockers and 25% faster sprints.',
+  },
+  {
     title: 'AI and voice features, end to end',
-    problem: 'You want an assistant that can actually talk to your customers — in your app, on WhatsApp, or over the phone.',
+    problem: 'You want an assistant that can actually talk to your customers: in your app, on WhatsApp, or over the phone.',
     offer: 'I build the whole path: LLM orchestration, real-time speech with LiveKit, Deepgram and ElevenLabs, telephony through Twilio and Asterisk, WhatsApp messaging, and the Stripe billing around it.',
-    proof: 'Cut Instack AI’s voice agent response time from 2–3 seconds to about one, and built DataQueue’s conversational AI platform end to end.',
+    proof: 'Cut Instack AI’s voice agent response time from 2 or 3 seconds to about one, and built DataQueue’s conversational AI platform end to end.',
   },
   {
     title: 'Platform and DevOps',
     problem: 'Deploys feel risky, the cloud bill keeps growing, or the database struggles under load.',
     offer: 'Architecture reviews and hands-on fixes across Vercel, Supabase, AWS and GCP (GKE): Kubernetes, Terraform, CI/CD, message queues, and moving heavy queries off your main database.',
     proof: 'At Coretava: 3K+ concurrent users on 40% fewer AWS resources, and analytics queries cut from 15 minutes to 30 seconds.',
-  },
-  {
-    title: 'Fractional lead engineer',
-    problem: 'You need senior technical leadership, but not a full-time CTO yet.',
-    offer: 'I join your team part-time to own architecture decisions, review code, mentor engineers, and set up an AI-assisted workflow — Claude Code, Cursor, custom subagents — that your team can keep running.',
-    proof: 'Leading a four-engineer team at Instack AI today. At Coretava I led 6–10 engineers and split them into frontend and backend units: 50% fewer cross-team blockers and 25% faster sprints.',
   },
 ];
 
@@ -341,7 +341,7 @@ export const RESULTS = [
   {
     company: 'Coretava',
     title: 'Merchant onboarding from four weeks to three days',
-    body: 'Built 15+ e-commerce integrations — VTEX, Magento, WooCommerce and more — plus public REST APIs for third parties. The addressable market grew 60%.',
+    body: 'Built 15+ e-commerce integrations, including VTEX, Magento and WooCommerce, plus public REST APIs for third parties. The addressable market grew 60%.',
     stack: ['REST APIs', 'VTEX', 'Magento', 'WooCommerce'],
   },
 ];
@@ -349,7 +349,7 @@ export const RESULTS = [
 export const FAQ = [
   {
     question: 'What does an engagement look like?',
-    answer: 'Usually one of three shapes: a fixed-scope build, such as a voice agent or a set of integrations; an architecture or infrastructure review with a written plan; or a part-time fractional lead role. We pick the shape on the first call.',
+    answer: 'Usually one of three shapes: a fixed-scope build, such as a voice agent or a set of integrations; an architecture or infrastructure review with a written plan; or a part-time fractional CTO role. We pick the shape on the first call.',
   },
   {
     question: 'How much does it cost?',

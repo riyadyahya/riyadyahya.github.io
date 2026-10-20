@@ -36,7 +36,7 @@ const Hero = () => {
 
         <div className="space-y-4 text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch]">
           <p>
-            I&apos;m an independent senior engineer, ten years in. Right now I&apos;m building real-time voice agents
+            I&apos;m a fractional CTO and hands-on senior engineer, ten years in. Right now I&apos;m building real-time voice agents
             with Instack AI, freight pricing software with BidSource, and a home-chef marketplace with Yalla Bites.
           </p>
           <p>
