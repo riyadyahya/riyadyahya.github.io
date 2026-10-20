@@ -1,4 +1,3 @@
-import avatar from '@/assets/avatar.jpg';
 import { CONTACT_INFO, EXPERIENCE, FAQ, PERSONAL_INFO, SERVICES, SITE_URL, TOP_SKILLS } from '@/constants';
 
 const PERSON_ID = `${SITE_URL}/#person`;
@@ -27,7 +26,7 @@ export const siteJsonLd = {
       jobTitle: PERSONAL_INFO.title,
       description: PERSONAL_INFO.description,
       url: `${SITE_URL}/`,
-      image: `${SITE_URL}${avatar.src}`,
+      image: `${SITE_URL}/riyad-yahya.jpg`,
       email: CONTACT_INFO.email,
       address: { '@type': 'PostalAddress', addressCountry: 'PS' },
       sameAs: [CONTACT_INFO.linkedin, CONTACT_INFO.github],
