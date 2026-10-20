@@ -1,85 +1,80 @@
 import Image from 'next/image';
-import profile from '../assets/profile.jpg';
-import { CONTACT_INFO, PERSONAL_INFO } from '@/constants';
+import avatar from '../assets/avatar.jpg';
+import BookCallButton from '@/components/BookCallButton';
+import { CLIENTS, CONTACT_INFO, EXPERIENCE, PERSONAL_INFO } from '@/constants';
+
+const workedWith = [
+  ...CLIENTS.map((c) => ({ name: c.name, website: c.website })),
+  ...Object.values(EXPERIENCE)
+    .filter((c) => !('featured' in c && c.featured))
+    .map((c) => ({ name: c.company, website: c.website })),
+];
 
 const Hero = () => {
   return (
     <section className="pt-32 pb-16 sm:pt-40 sm:pb-20">
       <div className="max-w-4xl mx-auto px-5 sm:px-6">
         <div className="flex items-center gap-4 mb-10">
-          <div className="relative w-14 h-14 rounded-full overflow-hidden ring-1 ring-neutral-200">
-            <Image src={profile} alt={PERSONAL_INFO.name} fill className="object-cover" priority />
+          <div className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden ring-1 ring-neutral-200">
+            <Image src={avatar} alt={`Portrait of ${PERSONAL_INFO.name}`} fill sizes="56px" className="object-cover" priority />
           </div>
-          <div className="flex items-center gap-2 text-[13px] text-neutral-500">
-            <span className="relative flex w-2 h-2">
-              <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
-              <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-500" />
-            </span>
-            Available for senior &amp; lead engineering work
+          <div>
+            <p className="text-[15px] font-medium text-neutral-950">{PERSONAL_INFO.name}</p>
+            <p className="flex items-center gap-2 text-[13px] text-neutral-600">
+              <span className="relative flex w-2 h-2" aria-hidden="true">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-500 opacity-60 motion-safe:animate-ping" />
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-500" />
+              </span>
+              {PERSONAL_INFO.availability}
+            </p>
           </div>
         </div>
 
-        <h1 className="text-[34px] sm:text-[44px] leading-[1.12] tracking-tight font-semibold mb-6 text-neutral-950">
-          Senior and{' '}
-          <span className="text-neutral-400">lead software engineer</span>,
-          ten years in.
+        <h1 className="max-w-[22ch] text-[34px] sm:text-[46px] leading-[1.1] tracking-tight font-semibold mb-6 text-neutral-950">
+          {PERSONAL_INFO.tagline}
         </h1>
 
         <div className="space-y-4 text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch]">
           <p>
-            I work as an independent consultant, partnering with multiple companies on full-stack product and
-            platform engineering — Next.js / NestJS with multi-cloud DevOps across AWS, GCP, and Vercel. My
-            delivery is accelerated by Claude Code, Cursor, and a stack of custom subagents I&apos;ve tuned over
-            the past year.
+            I&apos;m an independent senior engineer, ten years in. Right now I&apos;m building real-time voice agents
+            with Instack AI, freight pricing software with BidSource, and a home-chef marketplace with Yalla Bites.
           </p>
           <p>
-            Most recently I led full-stack and DevOps at{' '}
-            <a
-              href="https://www.dataqueue.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
-            >
-              DataQueue
-            </a>
-            , building a conversational AI platform on Next.js, NestJS, and GKE — Stripe billing, WhatsApp
-            messaging, and SIP telephony via LiveKit and Asterisk. Before that, Lead Software Engineer at Coretava
-            for ~5 years.
+            Most recently I led full-stack and DevOps at DataQueue, shipping a conversational AI platform on Next.js,
+            NestJS and GKE. Before that, I spent five years as lead engineer at Coretava.
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-neutral-950 text-white hover:bg-neutral-800 transition-colors"
-          >
-            Get in touch
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-          <a
-            href={CONTACT_INFO.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-500 hover:text-neutral-950 transition-colors"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            href={CONTACT_INFO.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-500 hover:text-neutral-950 transition-colors"
-          >
-            GitHub ↗
-          </a>
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <BookCallButton />
           <a
             href={`mailto:${CONTACT_INFO.email}`}
-            className="text-neutral-500 hover:text-neutral-950 transition-colors"
+            className="text-[15px] text-neutral-700 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
           >
-            Email ↗
+            or email me
           </a>
+        </div>
+
+        <div className="mt-16">
+          <p className="text-[13px] text-neutral-600 mb-3">Clients and teams I&apos;ve worked with</p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium text-neutral-950">
+            {workedWith.map((c) => (
+              <li key={c.name}>
+                {c.website ? (
+                  <a
+                    href={c.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-950"
+                  >
+                    {c.name}
+                  </a>
+                ) : (
+                  c.name
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

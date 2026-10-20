@@ -1,8 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import profile from '../assets/profile.jpg';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { PERSONAL_INFO, TOP_SKILLS } from "@/constants";
 
 const inter = Inter({
@@ -11,10 +12,15 @@ const inter = Inter({
   display: 'swap',
 });
 
+const defaultTitle = `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://riyadyahya.github.io'),
-  title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
-  description: PERSONAL_INFO.summary,
+  title: {
+    default: defaultTitle,
+    template: `%s | ${PERSONAL_INFO.name}`,
+  },
+  description: PERSONAL_INFO.description,
   keywords: TOP_SKILLS,
   authors: [{
     name: "Riyad Yahya",
@@ -30,10 +36,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: "Riyad Yahya Portfolio",
+    title: PERSONAL_INFO.name,
   },
   icons: {
     icon: [
@@ -43,31 +50,20 @@ export const metadata: Metadata = {
     apple: [
       { url: '/favicon.ico', sizes: '32x32', type: 'image/ico' },
     ],
-    other: [
-      { rel: 'mask-icon', url: '/favicon.ico', color: '#0a0a0a' },
-      { rel: 'icon', type: 'image/ico', sizes: '32x32', url: '/favicon.ico' },
-      { rel: 'manifest', url: '/site.webmanifest' }
-    ]
   },
   openGraph: {
-    title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
-    description: PERSONAL_INFO.summary,
+    title: defaultTitle,
+    description: PERSONAL_INFO.description,
     type: 'website',
     url: 'https://riyadyahya.github.io',
-    images: [
-      {
-        url: profile.src,
-        width: profile.width,
-        height: profile.height,
-        alt: "Riyad Yahya - Senior Software Engineer"
-      }
-    ]
+    siteName: PERSONAL_INFO.name,
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: `${PERSONAL_INFO.name}, ${PERSONAL_INFO.title}` }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
-    description: PERSONAL_INFO.summary,
-    images: [profile.src],
+    title: defaultTitle,
+    description: PERSONAL_INFO.description,
+    images: ['/og.png'],
   },
   robots: {
     index: true,
@@ -80,23 +76,21 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: "https://riyadyahya.github.io",
-    languages: { 'en-US': 'https://riyadyahya.github.io' },
-  },
   verification: {
     google: "K_xsDJU3vPXmT5OKdGadFK73P6sv8UJDo48vPZO4XxY",
   },
   other: {
     'msapplication-TileColor': '#ffffff',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'Riyad Yahya Portfolio',
-    'application-name': 'Riyad Yahya Portfolio',
     'msapplication-tap-highlight': 'no',
-    'theme-color': '#ffffff',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#ffffff',
+  colorScheme: 'light',
 };
 
 export default function RootLayout({
@@ -105,19 +99,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
-    <head>
-      <title>{`${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`}</title>
-      <link rel="shortcut icon" href="/favicon.ico"/>
-      <meta name="theme-color" content="#ffffff"/>
-      <meta name="color-scheme" content="light"/>
-      <link rel="manifest" href="/manifest.json"/>
-    </head>
+    <html lang="en" className={inter.variable}>
     <body className="font-sans antialiased">
       <GoogleAnalytics/>
-      <main className="min-h-screen">
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-60 focus:rounded-md focus:bg-neutral-950 focus:px-4 focus:py-2 focus:text-[14px] focus:text-white"
+      >
+        Skip to content
+      </a>
+      <Navbar/>
+      <main id="content" className="min-h-screen">
         {children}
       </main>
+      <Footer/>
     </body>
     </html>
   );

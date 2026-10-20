@@ -1,11 +1,11 @@
 {
-  "name": "Riyad Yahya Portfolio",
+  "name": "Riyad Yahya",
   "short_name": "Riyad Yahya",
-  "description": "Senior Software Engineer specializing in React.js, Node.js, and MongoDB. Building scalable & secure systems with over 7 years of experience in SaaS companies.",
+  "description": "Independent senior engineer helping early- and growth-stage teams ship AI and voice products on Next.js, Supabase, NestJS, AWS and GCP. Ten years in; previously DataQueue, Coretava and Freightos.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#ffffff",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -24,4 +24,4 @@
   "screenshots": [],
   "shortcuts": [],
   "iarc_rating_id": ""
-} 
+}

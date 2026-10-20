@@ -1,20 +1,22 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ProfileHeader from './components/ProfileHeader';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import EducationSection from './components/EducationSection';
 import SkillsSection from './components/SkillsSection';
 
+export const metadata: Metadata = {
+  title: 'Résumé',
+  alternates: { canonical: '/resume/' },
+};
+
 export default function ResumePage() {
   return (
-    <div className="min-h-screen">
-      <div className="max-w-6xl mx-auto px-0 lg:px-4 py-0 lg:py-10 print:py-0">
-        <main className="bg-white layout-content p-6">
-          <ProfileHeader />
-          <ExperienceTimeline />
-          <SkillsSection />
-          <EducationSection />
-        </main>
+    <div className="pt-14 print:pt-0">
+      <div className="max-w-4xl mx-auto px-5 sm:px-6 py-12 print:px-0 print:py-0">
+        <ProfileHeader />
+        <ExperienceTimeline />
+        <SkillsSection />
+        <EducationSection />
       </div>
     </div>
   );

@@ -1,49 +1,49 @@
+import BookCallButton from '@/components/BookCallButton';
+import Section from '@/components/Section';
 import { CONTACT_INFO } from '@/constants';
 
 const links = [
   { label: 'Email', value: CONTACT_INFO.email, href: `mailto:${CONTACT_INFO.email}` },
-  { label: 'WhatsApp', value: '+970 597 216 925', href: `https://wa.me/970597216925` },
+  { label: 'WhatsApp', value: CONTACT_INFO.phoneDisplay, href: CONTACT_INFO.whatsapp },
   { label: 'LinkedIn', value: 'linkedin.com/in/riyad-yahya', href: CONTACT_INFO.linkedin },
   { label: 'GitHub', value: 'github.com/riyadyahya', href: CONTACT_INFO.github },
-  { label: 'Calendar', value: 'Book a 30-min intro call', href: 'https://calendar.app.google/g1xnQQhhXEsXTe2X7' },
 ];
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 border-t border-neutral-200">
-      <div className="max-w-4xl mx-auto px-5 sm:px-6">
-        <div className="flex items-baseline justify-between mb-10">
-          <h2 className="text-[22px] sm:text-[24px] font-semibold tracking-tight text-neutral-950">Get in touch</h2>
-          <span className="text-[13px] text-neutral-500">Usually reply within a day</span>
-        </div>
+    <Section id="contact" title="Start with a 30-minute call" aside="Usually reply within a day">
+      <p className="text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch] mb-8">
+        Tell me what you&apos;re building and where it&apos;s stuck. If I&apos;m not the right fit, I&apos;ll tell you
+        on the call. Prefer writing? Email or WhatsApp works too.
+      </p>
 
-        <p className="text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch] mb-10">
-          I&apos;m open to senior and lead engineering work, consulting on AI / voice
-          infrastructure, and the occasional interesting project. The fastest way to reach me is email
-          or WhatsApp.
-        </p>
+      <BookCallButton />
 
-        <ul className="divide-y divide-neutral-200 border-y border-neutral-200">
-          {links.map((l) => (
+      <ul className="mt-12 divide-y divide-neutral-200 border-y border-neutral-200">
+        {links.map((l) => {
+          const external = l.href.startsWith('http');
+          return (
             <li key={l.label}>
               <a
                 href={l.href}
-                target={l.href.startsWith('http') ? '_blank' : undefined}
-                rel="noopener noreferrer"
-                className="grid grid-cols-[110px_1fr_auto] items-center gap-4 py-4 group"
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
+                className="grid grid-cols-[96px_1fr_auto] sm:grid-cols-[110px_1fr_auto] items-center gap-4 py-4 group"
               >
-                <span className="text-[14px] text-neutral-500">{l.label}</span>
-                <span className="text-[15px] text-neutral-950 group-hover:underline underline-offset-4 decoration-neutral-950">
+                <span className="text-[14px] text-neutral-600">{l.label}</span>
+                <span className="text-[15px] text-neutral-950 break-all group-hover:underline underline-offset-4 decoration-neutral-950">
                   {l.value}
+                  {external && <span className="sr-only"> (opens in a new tab)</span>}
                 </span>
-                <span className="text-neutral-400 group-hover:text-neutral-950 transition-colors">↗</span>
+                <span aria-hidden="true" className="text-neutral-500 group-hover:text-neutral-950 transition-colors">
+                  ↗
+                </span>
               </a>
             </li>
-          ))}
-        </ul>
-
-      </div>
-    </section>
+          );
+        })}
+      </ul>
+    </Section>
   );
 };
 

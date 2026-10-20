@@ -1,20 +1,22 @@
 // Helper function to calculate duration between two dates
-export const calculateDuration = (startDate: Date, endDate?: Date): string => {
-  const end = endDate || new Date();
-  const diffTime = Math.abs(end.getTime() - startDate.getTime());
+export const calculateDuration = (startDate: Date, endDate?: Date): string | null => {
+  if (!endDate) return null;
+
+  const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   const diffMonths = Math.floor(diffDays / 30.44);
   const diffYears = Math.floor(diffMonths / 12);
+  const plural = (n: number, unit: string) => `${n} ${unit}${n === 1 ? '' : 's'}`;
 
   if (diffYears > 0) {
     const remainingMonths = diffMonths % 12;
     if (remainingMonths > 0) {
-      return `${diffYears} year${diffYears > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
+      return `${plural(diffYears, 'year')} ${plural(remainingMonths, 'month')}`;
     }
-    return `${diffYears} year${diffYears > 1 ? 's' : ''}`;
+    return plural(diffYears, 'year');
   }
 
-  return `${diffMonths} month${diffMonths > 1 ? 's' : ''}`;
+  return plural(diffMonths, 'month');
 };
 
 // Helper function to format date range for display
@@ -25,7 +27,7 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
   });
 
   if (!endDate) {
-    return `${startFormatted} - Present`;
+    return `${startFormatted} – Present`;
   }
 
   const endFormatted = endDate.toLocaleDateString('en-US', {
@@ -33,14 +35,18 @@ export const formatDateRange = (startDate: Date, endDate?: Date): string => {
     month: 'long'
   });
 
-  return `${startFormatted} - ${endFormatted}`;
+  return `${startFormatted} – ${endFormatted}`;
 };
 
 export const PERSONAL_INFO = {
   name: "Riyad Yahya",
-  title: "Lead Software Engineer & Independent Consultant | Scalable Platforms & Product Growth",
+  title: "Lead Software Engineer & Independent Consultant",
+  tagline: "I help early- and growth-stage teams ship AI products — and the platforms they run on.",
+  description: "Independent senior engineer helping early- and growth-stage teams ship AI and voice products on Next.js, Supabase, NestJS, AWS and GCP. Ten years in; previously DataQueue, Coretava and Freightos.",
   summary: "AI-augmented software engineer and independent consultant, ten years in. I partner with multiple companies as a fractional senior/lead engineer — building and scaling platforms on Next.js / NestJS with multi-cloud DevOps, accelerated by a stack of AI dev tools like Claude Code, Cursor, and custom subagents. Most recently I led full-stack and DevOps at DataQueue; before that, Lead Software Engineer at Coretava for ~5 years.",
-  profileImage: "/profile.jpg"
+  availability: "Taking on new projects",
+  location: "Remote, based in Palestine",
+  timezone: "UTC+2, UTC+3 in summer",
 };
 
 export const TOP_SKILLS = [
@@ -50,12 +56,23 @@ export const TOP_SKILLS = [
   'NestJS',
   'Node.js',
   'React',
+  'Python',
+  'FastAPI',
+  'Supabase',
+  'PostgreSQL',
   'MongoDB',
+  'Redis',
   'MERN Stack',
   'AI Agents',
   'Voice AI',
   'Conversational AI',
+  'LiveKit',
+  'Twilio',
   'AI-Augmented Development',
+  'Vibe Coding',
+  'Agentic Coding',
+  'Prompt Engineering',
+  'Context Engineering',
   'Claude Code',
   'Software Architecture',
   'Microservices',
@@ -81,28 +98,28 @@ export const SKILLS_DETAILED = {
     'TypeScript', 'JavaScript', 'Python', 'SQL', 'GraphQL', 'HTML', 'CSS'
   ],
   Frontend: [
-    'Next.js', 'React', 'Redux', 'MobX', 'Tailwind CSS', 'Material UI', 'Bootstrap', 'Storybook', 'Server-side Rendering (SSR)', 'Responsive Web Design'
+    'Next.js', 'React', 'TanStack Query', 'Redux', 'MobX', 'Tailwind CSS', 'Material UI', 'Bootstrap', 'Storybook', 'Server-side Rendering (SSR)', 'Responsive Web Design'
   ],
   Backend: [
-    'Node.js', 'NestJS', 'Express.js', 'Payload CMS', 'FastAPI', 'Flask', 'REST APIs', 'GraphQL APIs', 'WebSockets', 'Webhooks', 'Microservices', 'Event-driven Architecture'
+    'Node.js', 'NestJS', 'Express.js', 'Python (FastAPI, Flask)', 'Payload CMS', 'REST APIs', 'GraphQL APIs', 'WebSockets', 'Webhooks', 'RabbitMQ', 'Amazon SQS', 'Microservices', 'Event-driven Architecture'
   ],
   'Databases & Storage': [
-    'MongoDB', 'PostgreSQL', 'Supabase', 'BigQuery', 'Firebase', 'Amazon S3'
+    'PostgreSQL', 'Supabase (Postgres, Auth, Storage)', 'MongoDB', 'Redis', 'BigQuery (analytics, ML)', 'Firebase', 'Amazon S3'
   ],
   'DevOps & Cloud': [
-    'GCP (GKE)', 'AWS (ECS, EC2, EKS, Lambda, S3, CloudFront)', 'Vercel', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Jenkins', 'CI/CD Pipelines'
+    'Vercel', 'GCP (GKE)', 'AWS (ECS, EC2, EKS, Lambda, S3, CloudFront)', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Jenkins', 'CI/CD Pipelines'
   ],
   'AI & Voice': [
-    'LiveKit', 'Deepgram', 'ElevenLabs', 'OpenAI', 'Whisper', 'Llama', 'Ollama', 'Vertex AI', 'AI Agents', 'Large Language Models (LLMs)', 'Speech-to-Text', 'Text-to-Speech', 'Asterisk', 'Vital PBX', 'SIP'
+    'LiveKit', 'Twilio Voice', 'Deepgram', 'ElevenLabs', 'OpenAI', 'Whisper', 'Llama', 'Ollama', 'Vertex AI', 'AI Agents', 'AI Agent Orchestration', 'Agentic AI Systems', 'RAG (knowledge bases)', 'Large Language Models (LLMs)', 'Speech-to-Text', 'Text-to-Speech', 'Asterisk', 'Vital PBX', 'SIP'
   ],
   'Integrations & APIs': [
-    'Stripe (Connect, Checkout)', 'Twilio', 'SendGrid', 'Nash', 'Shippo', 'WhatsApp', 'Auth0', 'Amazon Cognito', 'Shopify', 'VTEX', 'Magento', 'WooCommerce', 'Pub/Sub', 'Apollo'
+    'Stripe (Connect, Checkout, Billing)', 'Twilio', 'WhatsApp Business API', 'Gmail API', 'SendGrid', 'Nash', 'Shippo', 'Auth0', 'Amazon Cognito', 'Shopify', 'VTEX', 'Magento', 'WooCommerce', 'Pub/Sub', 'Apollo'
   ],
   'Testing & Tooling': [
     'Jest', 'Mocha', 'Sentry', 'Kibana', 'Google Analytics', 'Git', 'GitHub', 'Webpack', 'Figma'
   ],
   'AI-Augmented Development': [
-    'Claude Code', 'Cursor AI', 'Claude Agent SDK', 'Custom Subagents', 'MCP Servers', 'Agentic Workflows', 'AI-Assisted Code Review', 'Automated Codebase Exploration', 'Anthropic API', 'OpenAI API'
+    'Vibe Coding', 'Agentic Coding', 'Claude Code', 'Cursor AI', 'Replit', 'Claude Agent SDK', 'Custom Subagents', 'MCP Servers', 'Prompt Engineering', 'Context Engineering', 'Spec-driven Development', 'Agentic Workflows', 'AI-Assisted Code Review', 'Automated Codebase Exploration', 'Anthropic API', 'OpenAI API', 'Gemini API'
   ],
   'Architecture & Leadership': [
     'Software Architecture', 'Solution Architecture', 'Technical Leadership', 'MERN Stack', 'Agile Software Development', 'Mentorship', 'Team Restructuring', 'Third-party Integration'
@@ -118,12 +135,12 @@ export const EXPERIENCE = {
     positions: [
       {
         title: "Independent Software Engineer & Consultant",
-        startDate: new Date(2026, 5, 1), // June 2026
+        startDate: new Date(2025, 5, 1), // June 2025
         endDate: undefined, // Present
         achievements: [
-          "Partner with multiple companies as a fractional senior/lead engineer, shipping full-stack product and platform work across Next.js, NestJS, and Node.js.",
-          "Advise on software architecture, multi-cloud DevOps (AWS, GCP, Vercel), and scalable backend design for early- and growth-stage teams.",
-          "Embed AI-augmented delivery — Claude Code, Cursor, and custom subagents — to accelerate team velocity and raise code quality.",
+          "Partner with multiple companies as a fractional senior/lead engineer, shipping full-stack product and platform work across Next.js, Supabase, NestJS, Node.js, and Python.",
+          "Advise on software architecture, multi-cloud DevOps (Vercel, AWS, GCP), and scalable backend design for early- and growth-stage teams.",
+          "Embed AI-native delivery — vibe coding for fast prototypes, agentic coding with Claude Code, Cursor, and custom subagents for production — to accelerate team velocity and raise code quality.",
           "Build AI, voice, and conversational features end-to-end, from LLM orchestration to real-time telephony and messaging integrations."
         ]
       }
@@ -230,7 +247,136 @@ export const EDUCATION = {
 export const CONTACT_INFO = {
   email: 'riyadyhia@gmail.com',
   phone: '+970597216925',
+  phoneDisplay: '+970 597 216 925',
+  whatsapp: 'https://wa.me/970597216925',
+  calendar: 'https://calendar.app.google/g1xnQQhhXEsXTe2X7',
   linkedin: 'https://www.linkedin.com/in/riyad-yahya/',
   github: 'https://github.com/riyadyahya',
   portfolio: 'https://riyadyahya.github.io/'
 };
+
+export const CLIENTS = [
+  {
+    name: 'Instack AI',
+    legalName: '24x7 Direct Pty Ltd',
+    website: 'https://instack.com.au/',
+    role: 'Senior Solution Architect & Engineer',
+    achievements: [
+      'Leading a 4-engineer team building a multi-tenant SaaS voice agent platform: customers design voice workflows, connect Twilio numbers and calendars, and upload knowledge bases to handle inbound and outbound calls.',
+      'Cut the voice agent’s response latency roughly 3x, from 2–3 seconds to about 1 second, so conversations feel real-time.',
+      'Built and deployed LiveKit voice agents on AWS ECS, with Deepgram speech-to-text, ElevenLabs text-to-speech and OpenAI for reasoning.',
+      'Integrated Twilio telephony from the ground up, including regulated-number provisioning, regulatory bundles and toll-free support, plus per-number Stripe billing with failure rollbacks.',
+      'Built the structured call-data capture and workflow-variable engine, turning static call flows into data-aware ones.',
+    ],
+  },
+  {
+    name: 'BidSource',
+    website: 'https://www.bidsource.io/',
+    role: 'Senior Solution Architect',
+    achievements: [
+      'Building a rate management platform for freight forwarders on Next.js, with Supabase (Postgres, Auth, Storage) as the entire backend, replacing spreadsheet-based pricing workflows.',
+      'Designed and shipped Opportunities, which combines multiple buy rates, batch carrier outreach and derived sell rates in one flow, replacing multi-day manual quoting cycles.',
+      'Built a 4-tier lane pricing recommendation engine with AI estimation and confidence scoring, plus projected-margin calculations.',
+      'Built AWS Lambda functions for rate allocation, provisioned infrastructure with Terraform, and added fuel-surcharge management through the EIA API.',
+    ],
+  },
+  {
+    name: 'Yalla Bites',
+    website: 'https://yallabites.com/',
+    role: 'Backend & DevOps Engineer',
+    achievements: [
+      'Building backend services for a US home-chef marketplace that connects customers with local cooks for on-demand meal delivery.',
+      'Developing on Next.js, Payload CMS and Supabase on Vercel, with Stripe payments, payouts and subscriptions.',
+      'Integrated Nash for delivery orchestration and Shippo for shipping labels, and own CI/CD with GitHub Actions and Sentry monitoring.',
+    ],
+  },
+];
+
+export const SERVICES = [
+  {
+    title: 'AI and voice features, end to end',
+    problem: 'You want an assistant that can actually talk to your customers — in your app, on WhatsApp, or over the phone.',
+    offer: 'I build the whole path: LLM orchestration, real-time speech with LiveKit, Deepgram and ElevenLabs, telephony through Twilio and Asterisk, WhatsApp messaging, and the Stripe billing around it.',
+    proof: 'Cut Instack AI’s voice agent response time from 2–3 seconds to about one, and built DataQueue’s conversational AI platform end to end.',
+  },
+  {
+    title: 'Platform and DevOps',
+    problem: 'Deploys feel risky, the cloud bill keeps growing, or the database struggles under load.',
+    offer: 'Architecture reviews and hands-on fixes across Vercel, Supabase, AWS and GCP (GKE): Kubernetes, Terraform, CI/CD, message queues, and moving heavy queries off your main database.',
+    proof: 'At Coretava: 3K+ concurrent users on 40% fewer AWS resources, and analytics queries cut from 15 minutes to 30 seconds.',
+  },
+  {
+    title: 'Fractional lead engineer',
+    problem: 'You need senior technical leadership, but not a full-time CTO yet.',
+    offer: 'I join your team part-time to own architecture decisions, review code, mentor engineers, and set up an AI-assisted workflow — Claude Code, Cursor, custom subagents — that your team can keep running.',
+    proof: 'Leading a four-engineer team at Instack AI today. At Coretava I led 6–10 engineers and split them into frontend and backend units: 50% fewer cross-team blockers and 25% faster sprints.',
+  },
+];
+
+export const RESULTS = [
+  {
+    company: 'Instack AI',
+    title: 'A voice agent that answers in about a second, down from two or three',
+    body: 'Led a sustained performance push on a multi-tenant voice agent platform built on LiveKit, Deepgram, ElevenLabs and OpenAI, cutting response latency roughly 3x so calls feel real-time. Also built its Twilio telephony layer and per-number Stripe billing.',
+    stack: ['LiveKit', 'Twilio', 'Deepgram', 'ElevenLabs', 'OpenAI', 'AWS ECS', 'Supabase', 'Stripe'],
+  },
+  {
+    company: 'DataQueue',
+    title: 'A conversational AI platform for web, WhatsApp and phone',
+    body: 'Led full-stack and DevOps for the platform end to end: NestJS services on MongoDB, a Next.js product UI, Stripe subscriptions, WhatsApp messaging, and SIP telephony through LiveKit, Asterisk and Vital PBX, all running on GKE.',
+    stack: ['Next.js', 'NestJS', 'MongoDB', 'Redis', 'GKE', 'Terraform', 'LiveKit', 'Asterisk', 'Stripe'],
+  },
+  {
+    company: 'BidSource',
+    title: 'Freight quotes in one flow instead of days of spreadsheets',
+    body: 'Designed and shipped Opportunities, which lets forwarders combine buy rates, send batch carrier outreach and derive sell rates in one place, backed by a 4-tier lane pricing engine with AI estimates and confidence scores.',
+    stack: ['Next.js', 'Supabase', 'Vercel', 'Python (FastAPI)', 'AWS Lambda', 'Terraform', 'OpenAI'],
+  },
+  {
+    company: 'Coretava',
+    title: 'Analytics queries from 15 minutes to 30 seconds',
+    body: 'Moved analytics off the main MongoDB database and onto BigQuery, which also became the base for big-data analysis and machine learning. Complex queries became 30× faster and load on MongoDB dropped by 70%.',
+    stack: ['MongoDB', 'BigQuery'],
+  },
+  {
+    company: 'Coretava',
+    title: 'Merchant onboarding from four weeks to three days',
+    body: 'Built 15+ e-commerce integrations — VTEX, Magento, WooCommerce and more — plus public REST APIs for third parties. The addressable market grew 60%.',
+    stack: ['REST APIs', 'VTEX', 'Magento', 'WooCommerce'],
+  },
+];
+
+export const FAQ = [
+  {
+    question: 'What does an engagement look like?',
+    answer: 'Usually one of three shapes: a fixed-scope build, such as a voice agent or a set of integrations; an architecture or infrastructure review with a written plan; or a part-time fractional lead role. We pick the shape on the first call.',
+  },
+  {
+    question: 'How much does it cost?',
+    answer: 'It depends on scope. After the intro call I send a short written proposal with either a fixed price or a day rate, so you know the number before any work starts.',
+  },
+  {
+    question: 'Where are you based, and what hours do you work?',
+    answer: `I work remotely from Palestine (${PERSONAL_INFO.timezone}). My day overlaps with European working hours and with mornings on the US East Coast.`,
+  },
+  {
+    question: 'Can you work with our existing team?',
+    answer: 'Yes. Most of my work happens alongside in-house engineers: pairing, code review, and leaving code and docs your team can own.',
+  },
+  {
+    question: 'How do you use AI tools?',
+    answer: 'Heavily, and on purpose. I vibe-code prototypes and internal tools to test ideas in hours, then switch to agentic coding for production: Claude Code, Cursor, custom subagents and MCP servers handle exploration, review and routine code, while I own the architecture and review and test every change before it ships.',
+  },
+];
+
+export const STACK_SUMMARY = [
+  'TypeScript', 'Next.js', 'Node.js', 'NestJS', 'Python (FastAPI)',
+  'Supabase', 'PostgreSQL', 'MongoDB', 'Redis',
+  'Vercel', 'AWS', 'GCP', 'Kubernetes', 'Terraform',
+  'LiveKit', 'Twilio', 'OpenAI', 'Stripe',
+];
+
+export const AI_WORKFLOW = [
+  'Vibe coding for prototypes', 'Agentic coding', 'Claude Code', 'Cursor',
+  'Custom subagents', 'MCP servers', 'Context engineering',
+];

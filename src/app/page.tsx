@@ -1,26 +1,23 @@
-import { Viewport } from 'next';
-import Navbar from '@/components/Navbar';
+import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
-import Now from '@/components/Now';
+import Services from '@/components/Services';
+import Results from '@/components/Results';
 import Experience from '@/components/Experience';
-import Skills from '@/components/Skills';
+import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-  themeColor: '#ffffff',
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
 };
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
-      <Now />
+      <Services />
+      <Results />
       <Experience />
-      <Skills />
+      <FAQ />
       <Contact />
     </>
   );

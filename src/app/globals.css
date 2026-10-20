@@ -4,18 +4,24 @@
   --font-sans: var(--font-inter);
 }
 
+@theme {
+  --color-accent: #1d4ed8;
+  --color-accent-strong: #1e3a8a;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --muted: #6b6b6b;
-  --line: #ececec;
-  --line-strong: #d4d4d4;
-  --accent: #1d4ed8;
 }
 
 html {
   background: var(--background);
   color: var(--foreground);
+  scroll-padding-top: 4.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 body {
@@ -23,6 +29,12 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 ::selection { background: #cfe0ff; color: #0a0a0a; }
