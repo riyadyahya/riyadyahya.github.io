@@ -32,7 +32,7 @@ A modern, responsive portfolio website built with Next.js and Tailwind CSS, show
 ### Prerequisites
 
 - Node.js 20.x or later
-- npm 10.x or later
+- pnpm 10.x (`corepack enable` picks up the version pinned in `package.json`)
 - Git
 
 ### Development
@@ -45,12 +45,12 @@ cd riyadyahya.github.io
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Run the development server:
 ```bash
-npm run dev
+pnpm dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -58,9 +58,10 @@ npm run dev
 ### Building for Production
 
 ```bash
-npm run build
-npm run start
+pnpm build
 ```
+
+The static site is exported to `out/`.
 
 ## 📦 Project Structure
 

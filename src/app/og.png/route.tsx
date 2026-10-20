@@ -24,7 +24,15 @@ export async function GET() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-          <img src={avatarSrc} alt="" width={100} height={100} style={{ borderRadius: 9999 }} />
+          <div
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: 9999,
+              backgroundImage: `url(${avatarSrc})`,
+              backgroundSize: '100px 100px',
+            }}
+          />
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontSize: 38 }}>{PERSONAL_INFO.name}</div>
             <div style={{ fontSize: 26, color: '#525252' }}>{PERSONAL_INFO.title}</div>
