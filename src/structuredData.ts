@@ -3,6 +3,13 @@ import { CONTACT_INFO, EXPERIENCE, FAQ, PERSONAL_INFO, SERVICES, SITE_URL, TOP_S
 const PERSON_ID = `${SITE_URL}/#person`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
+const questions = (items: typeof FAQ) =>
+  items.map((q) => ({
+    '@type': 'Question',
+    name: q.question,
+    acceptedAnswer: { '@type': 'Answer', text: q.answer },
+  }));
+
 const formerEmployers = Object.values(EXPERIENCE)
   .filter((c) => !('featured' in c && c.featured))
   .map((c) => ({ '@type': 'Organization', name: c.company, url: c.website }));
@@ -53,12 +60,29 @@ export const faqJsonLd = {
   url: `${SITE_URL}/`,
   isPartOf: { '@id': WEBSITE_ID },
   about: { '@id': PERSON_ID },
-  mainEntity: FAQ.map((q) => ({
-    '@type': 'Question',
-    name: q.question,
-    acceptedAnswer: { '@type': 'Answer', text: q.answer },
-  })),
+  mainEntity: questions(FAQ),
 };
+
+export const faqPageJsonLd = (faq: typeof FAQ) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  isPartOf: { '@id': WEBSITE_ID },
+  mainEntity: questions(faq),
+});
+
+export const breadcrumbJsonLd = (links: { name: string; href: string }[], current: string) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    ...links.map((link, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: link.name,
+      item: `${SITE_URL}${link.href}`,
+    })),
+    { '@type': 'ListItem', position: links.length + 1, name: current },
+  ],
+});
 
 export const resumeJsonLd = {
   '@context': 'https://schema.org',

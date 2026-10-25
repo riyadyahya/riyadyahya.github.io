@@ -12,6 +12,9 @@ const Footer = () => {
           </p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2 text-[14px] text-neutral-600">
+          <Link href="/mvp-to-production/" className="hover:text-neutral-950">
+            MVP to production
+          </Link>
           <Link href="/resume/" className="hover:text-neutral-950">
             Résumé
           </Link>

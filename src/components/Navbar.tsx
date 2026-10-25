@@ -11,6 +11,11 @@ const navItems = [
   { name: 'FAQ', href: '/#faq' },
 ];
 
+const pageLinks = [
+  { name: 'MVP to production', href: '/mvp-to-production/' },
+  { name: 'Résumé', href: '/resume/' },
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,19 +39,21 @@ const Navbar = () => {
             Riyad Yahya
           </Link>
 
-          <nav aria-label="Main" className="hidden md:flex items-center gap-6 text-[14px] text-neutral-600">
+          <nav aria-label="Main" className="hidden lg:flex items-center gap-6 text-[14px] text-neutral-600">
             {navItems.map((item) => (
               <a key={item.name} href={item.href} className="hover:text-neutral-950 transition-colors">
                 {item.name}
               </a>
             ))}
-            <Link href="/resume/" className="hover:text-neutral-950 transition-colors">
-              Résumé
-            </Link>
+            {pageLinks.map((item) => (
+              <Link key={item.name} href={item.href} className="hover:text-neutral-950 transition-colors">
+                {item.name}
+              </Link>
+            ))}
             <BookCallButton compact />
           </nav>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <BookCallButton compact />
             <button
               type="button"
@@ -68,7 +75,7 @@ const Navbar = () => {
         </div>
 
         {isMenuOpen && (
-          <nav id="mobile-menu" aria-label="Main" className="md:hidden pb-3">
+          <nav id="mobile-menu" aria-label="Main" className="lg:hidden pb-3">
             <ul className="flex flex-col text-[16px] text-neutral-700">
               {navItems.map((item) => (
                 <li key={item.name}>
@@ -81,11 +88,13 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <Link href="/resume/" onClick={() => setIsMenuOpen(false)} className="block py-3 hover:text-neutral-950">
-                  Résumé
-                </Link>
-              </li>
+              {pageLinks.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} onClick={() => setIsMenuOpen(false)} className="block py-3 hover:text-neutral-950">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         )}

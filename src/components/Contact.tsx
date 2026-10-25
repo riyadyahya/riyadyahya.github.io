@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import BookCallButton from '@/components/BookCallButton';
 import Section from '@/components/Section';
 import { CONTACT_INFO } from '@/constants';
@@ -9,13 +10,22 @@ const links = [
   { label: 'GitHub', value: 'github.com/riyadyahya', href: CONTACT_INFO.github },
 ];
 
-const Contact = () => {
+type ContactProps = {
+  title?: string;
+  intro?: ReactNode;
+};
+
+const defaultIntro = (
+  <>
+    Tell me what you&apos;re building and where it&apos;s stuck. If I&apos;m not the right fit, I&apos;ll tell you on
+    the call. Prefer writing? Email or WhatsApp works too.
+  </>
+);
+
+const Contact = ({ title = 'Start with a 30-minute call', intro = defaultIntro }: ContactProps) => {
   return (
-    <Section id="contact" title="Start with a 30-minute call" aside="Usually reply within a day">
-      <p className="text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch] mb-8">
-        Tell me what you&apos;re building and where it&apos;s stuck. If I&apos;m not the right fit, I&apos;ll tell you
-        on the call. Prefer writing? Email or WhatsApp works too.
-      </p>
+    <Section id="contact" title={title} aside="Usually reply within a day">
+      <p className="text-[16px] sm:text-[17px] leading-[1.65] text-neutral-700 max-w-[62ch] mb-8">{intro}</p>
 
       <BookCallButton />
 

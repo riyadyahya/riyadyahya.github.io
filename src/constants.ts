@@ -217,6 +217,8 @@ export const CONTACT_INFO = {
   portfolio: 'https://riyadyahya.github.io/'
 };
 
+export const AUDIT_PRICE = '$1,500';
+
 export const CLIENTS = [
   {
     name: 'Instack AI',
@@ -255,6 +257,13 @@ export const CLIENTS = [
 ];
 
 export const SERVICES = [
+  {
+    title: 'AI-built MVP to production',
+    problem: 'You built your MVP with Lovable, Bolt, v0, Replit or Cursor. It proved the idea, and now it has to hold up with real users, real money and a growing team.',
+    offer: 'It starts with a fixed-price audit and a ranked fix list in 48 hours. Then I either harden what you have in days or move it to a production codebase your team owns, and can stay on as your fractional CTO.',
+    proof: 'I run Next.js, Supabase and Vercel in production at BidSource and Yalla Bites, and built the Stripe billing and payouts at Instack AI and Yalla Bites.',
+    href: '/mvp-to-production/',
+  },
   {
     title: 'Fractional CTO',
     problem: 'You need senior technical leadership, but not a full-time CTO yet.',
@@ -315,7 +324,7 @@ export const FAQ = [
   },
   {
     question: 'How much does it cost?',
-    answer: 'It depends on scope. After the intro call I send a short written proposal with either a fixed price or a day rate, so you know the number before any work starts.',
+    answer: 'The production audit for AI-built MVPs has a fixed price, listed on its page. Everything else depends on scope: after the intro call I send a short written proposal with either a fixed price or a day rate, so you know the number before any work starts.',
   },
   {
     question: 'Where are you based, and what hours do you work?',

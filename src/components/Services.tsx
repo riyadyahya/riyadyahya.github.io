@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Section from '@/components/Section';
 import { SERVICES } from '@/constants';
 
@@ -15,6 +16,16 @@ const Services = () => {
                 <span className="font-medium text-neutral-800">Track record: </span>
                 {s.proof}
               </p>
+              {s.href && (
+                <p className="text-[14px]">
+                  <Link
+                    href={s.href}
+                    className="font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:text-accent-strong hover:decoration-accent-strong"
+                  >
+                    See what&apos;s included and pricing
+                  </Link>
+                </p>
+              )}
             </div>
           </article>
         ))}

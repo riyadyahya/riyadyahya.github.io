@@ -1,11 +1,15 @@
 import Section from '@/components/Section';
 import { FAQ as QUESTIONS } from '@/constants';
 
-const FAQ = () => {
+type FAQProps = {
+  items?: typeof QUESTIONS;
+};
+
+const FAQ = ({ items = QUESTIONS }: FAQProps) => {
   return (
     <Section id="faq" title="Questions">
       <div className="divide-y divide-neutral-200 border-y border-neutral-200">
-        {QUESTIONS.map((q) => (
+        {items.map((q) => (
           <details key={q.question} className="group">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[16px] font-medium text-neutral-950 [&::-webkit-details-marker]:hidden">
               {q.question}
